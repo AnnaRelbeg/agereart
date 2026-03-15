@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgereArt — ręcznie robione bransoletki z kamieni naturalnych i szlachetnych. Odkryj moc natury w pięknej biżuterii.">
+  <title>AgereArt — Bransoletki z Kamieni Naturalnych i Szlachetnych</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img src="images/AgereArtLogo.png" alt="AgereArt" class="logo-img">
+      </a>
+      <button class="nav-toggle" aria-label="Menu nawigacji"><span></span><span></span><span></span></button>
+      <nav class="main-nav">
+        <a href="#o-nas">O Nas</a>
+        <a href="#kolekcja">Kolekcja</a>
+        <a href="#przewodnik">Przewodnik</a>
+        <a href="#prezent">Prezent</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <button class="cart-icon-btn" id="cart-icon-btn" aria-label="Koszyk">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cart-badge"></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero section--dark">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Noś energię<br><em>natury</em> przy sobie</h1>
+      <p class="hero-label">Ręcznie robiona biżuteria z kamieni naturalnych i szlachetnych</p>
+      <p class="hero-subtitle">Każda bransoletka to unikalne połączenie kamieni naturalnych i szlachetnych z rzemieślniczą precyzją. Odkryj minerały, które współgrają z Twoją duszą.</p>
+      <a href="#kolekcja" class="hero-cta">
+        <span>Odkryj kolekcję</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-scroll-indicator"><span>Przewiń</span><div class="scroll-line"></div></div>
+  </section>
+
+
+  <section class="about-section" id="o-nas">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal">
+          <img src="images/Rozowy_Kwarc__Onyks.jpg" alt="Bransoletka Różowy Kwarc i Onyks w eleganckim pudełku" loading="lazy">
+          <div class="about-image-frame"></div>
+        </div>
+        <div class="about-content">
+          <p class="section-label reveal">Nasza filozofia</p>
+          <h2 class="section-title reveal reveal-delay-1">Biżuteria z <em>duszą</em> i znaczeniem</h2>
+          <p class="about-text reveal reveal-delay-2">Każda bransoletka AgereArt powstaje z pasji do natury i rękodzieła. Starannie dobieramy zarówno kamienie naturalne, jak i szlachetne — szmaragdy, szafiry, kianity — kierując się nie tylko ich pięknem, ale przede wszystkim energetycznymi właściwościami, przypisywanymi minerałom w wielu kulturach świata.</p>
+          <p class="about-text reveal reveal-delay-3">Wierzymy, że biżuteria to więcej niż ozdoba — to osobisty talizman, który niesie ze sobą energię ziemi i wspiera Cię w codziennym życiu. Każdy kamień przeszedł miliony lat geologicznych przemian, by trafić właśnie do Twoich rąk.</p>
+          <div class="about-stats reveal reveal-delay-4">
+            <div class="stat-item"><div class="stat-number" data-count="100" data-suffix="%">0%</div><div class="stat-label">Kamienie naturalne</div></div>
+            <div class="stat-item"><div class="stat-number" data-count="500" data-suffix="+">0+</div><div class="stat-label">Zadowolonych klientów</div></div>
+            <div class="stat-item"><div class="stat-number" data-count="21" data-suffix="+">0+</div><div class="stat-label">Unikalnych wzorów</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-stone">
+    <div class="container">
+      <div class="section-label reveal" style="margin-bottom: 40px;">Wyróżniony kamień</div>
+      <div class="featured-grid">
+        <div class="featured-image-main reveal"><img src="images/Onyks_Fasetowany_2.jpg" alt="Bransoletka Onyks Fasetowany" loading="lazy"></div>
+        <div class="featured-info reveal reveal-delay-1">
+          <div class="stone-name">Onyks Fasetowany</div>
+          <div class="stone-subtitle">Szlifowana Wytrwałość</div>
+          <p class="stone-desc">Klasyka w najbardziej luksusowym wydaniu. Onyks fasetowany dzięki swoim licznym ściankom odbija światło, symbolizując wielowymiarowość ludzkiego charakteru. To kamień dla liderów — wzmacnia autorytet i pomaga przejąć kontrolę nad własnym losem.</p>
+          <div class="stone-properties">
+            <span class="stone-prop-tag">Autorytet</span><span class="stone-prop-tag">Kontrola</span><span class="stone-prop-tag">Elegancja</span><span class="stone-prop-tag">Lider</span>
+          </div>
+        </div>
+        <div class="featured-image-secondary reveal reveal-delay-2"><img src="images/Onyks_Fasetowany_1.jpg" alt="Onyks fasetowany z bliska" loading="lazy"></div>
+        <div class="featured-image-secondary reveal reveal-delay-3"><img src="images/Pudelko.jpg" alt="Eleganckie pudełko prezentowe" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section section--dark">
+    <div class="container">
+      <p class="quote-text-main reveal">„Biżuteria z kamieni naturalnych to nie tylko piękno — to fragment historii Ziemi, który nosisz przy sercu"</p>
+      <p class="quote-author reveal reveal-delay-1">AgereArt</p>
+    </div>
+  </section>
+
+  <section class="shop-section" id="kolekcja">
+    <div class="container">
+      <div class="shop-header">
+        <div class="shop-header-text">
+          <p class="section-label reveal">Nasza kolekcja</p>
+          <h2 class="section-title reveal reveal-delay-1">Wybierz swój <em>kamień</em></h2>
+        </div>
+        <div class="shop-filter-bar reveal reveal-delay-2">
+          <button class="filter-btn active" data-filter="all">Wszystkie</button>
+          <button class="filter-btn" data-filter="szlachetne">✦ Szlachetne</button>
+          <button class="filter-btn" data-filter="spokój">Spokój</button>
+          <button class="filter-btn" data-filter="siła">Siła</button>
+          <button class="filter-btn" data-filter="miłość">Miłość</button>
+          <button class="filter-btn" data-filter="intuicja">Intuicja</button>
+          <button class="filter-btn" data-filter="transformacja">Transformacja</button>
+        </div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card reveal" data-product="agat" data-category="spokój">
+          <div class="product-image"><img src="images/Agat_bransoletka.jpg" alt="Bransoletka Biały Agat" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Biały Agat</h3><p class="product-stone">Czysty Spokój</p><p class="product-energy">Wyciszenie · Nadzieja · Harmonia</p><div class="product-footer"><span class="product-price">89 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-product="agat_lawa" data-category="siła">
+          <div class="product-image"><img src="images/Agat_i_Lawa1.jpg" alt="Bransoletka Agat i Lawa" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Agat i Lawa</h3><p class="product-stone">Pierwotna Równowaga</p><p class="product-energy">Harmonia · Odrodzenie · Pasja</p><div class="product-footer"><span class="product-price">99 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-product="labradoryt" data-category="intuicja">
+          <div class="product-image"><img src="images/Labradoryt_1.jpg" alt="Bransoletka Labradoryt" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div><span class="product-badge">Bestseller</span></div>
+          <div class="product-info"><h3 class="product-name">Labradoryt</h3><p class="product-stone">Kamień Gwiazd</p><p class="product-energy">Tajemnica · Ochrona · Intuicja</p><div class="product-footer"><span class="product-price">109 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal" data-product="labradoryt_agat" data-category="intuicja">
+          <div class="product-image"><img src="images/Labradoryt_i_Agat_1.jpg" alt="Bransoletka Labradoryt i Agat" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Labradoryt i Agat</h3><p class="product-stone">Intuicja i Ugruntowanie</p><p class="product-energy">Kreatywność · Wizja · Stabilność</p><div class="product-footer"><span class="product-price">119 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-product="lawa" data-category="transformacja">
+          <div class="product-image"><img src="images/Lawa_Wulkaniczna_1.jpg" alt="Bransoletka Lawa Wulkaniczna" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Lawa Wulkaniczna</h3><p class="product-stone">Surowa Siła Odrodzenia</p><p class="product-energy">Ogień · Ziemia · Fundament</p><div class="product-footer"><span class="product-price">89 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-product="lawa_tygrysie" data-category="siła">
+          <div class="product-image"><img src="images/Lawa_i_Tygrysie_Oko_1.jpg" alt="Bransoletka Lawa i Tygrysie Oko" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div><span class="product-badge">Nowość</span></div>
+          <div class="product-info"><h3 class="product-name">Lawa i Tygrysie Oko</h3><p class="product-stone">Surowa Energia</p><p class="product-energy">Pewność siebie · Motywacja · Żywioły</p><div class="product-footer"><span class="product-price">109 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal" data-product="lawa_malachit" data-category="transformacja">
+          <div class="product-image"><img src="images/Lawa_i_Malachit_1.jpg" alt="Bransoletka Lawa i Malachit" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Lawa i Malachit</h3><p class="product-stone">Ogień i Natura</p><p class="product-energy">Transformacja · Odwaga · Nowe możliwości</p><div class="product-footer"><span class="product-price">119 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-product="onyks_fasetowany" data-category="siła">
+          <div class="product-image"><img src="images/Onyks_Fasetowany_1.jpg" alt="Bransoletka Onyks Fasetowany" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Onyks Fasetowany</h3><p class="product-stone">Szlifowana Wytrwałość</p><p class="product-energy">Autorytet · Kontrola · Luksus</p><div class="product-footer"><span class="product-price">99 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-product="onyks_matowy" data-category="siła">
+          <div class="product-image"><img src="images/Onyks_Matowy_1.jpg" alt="Bransoletka Onyks Matowy" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Onyks Matowy</h3><p class="product-stone">Głęboka Cisza</p><p class="product-energy">Spokój · Pewność · Autentyczność</p><div class="product-footer"><span class="product-price">95 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal" data-product="onyks_krysztal" data-category="spokój">
+          <div class="product-image"><img src="images/Onyks_i_Krysztal_Gorski_1.jpg" alt="Bransoletka Onyks i Kryształ Górski" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Onyks i Kryształ Górski</h3><p class="product-stone">Jasność Umysłu</p><p class="product-energy">Dyscyplina · Oczyszczenie · Fokus</p><div class="product-footer"><span class="product-price">109 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-product="onyks_agat_fioletowy" data-category="intuicja">
+          <div class="product-image"><img src="images/Onyks_Fasetowan_2.jpg" alt="Bransoletka Onyks i Agat Fioletowy" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Onyks & Agat Fioletowy</h3><p class="product-stone">Królewska Intuicja</p><p class="product-energy">Harmonia · Logika · Intuicja</p><div class="product-footer"><span class="product-price">119 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-product="onyks_jaspis" data-category="miłość">
+          <div class="product-image"><img src="images/Onyks_Fasetowan_i_Japis_rozowy_1.jpg" alt="Bransoletka Onyks i Jaspis Różowy" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Onyks & Jaspis Różowy</h3><p class="product-stone">Siła i Łagodność</p><p class="product-energy">Empatia · Ciepło · Klasa</p><div class="product-footer"><span class="product-price">119 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal" data-product="onyks_labradoryt" data-category="intuicja">
+          <div class="product-image"><img src="images/Onyks_Matow1_i_labradoryt_1.jpg" alt="Bransoletka Onyks i Labradoryt" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div><span class="product-badge">Bestseller</span></div>
+          <div class="product-info"><h3 class="product-name">Onyks & Labradoryt</h3><p class="product-stone">Mistyczna Noc</p><p class="product-energy">Tajemnica · Głębia · Klasa</p><div class="product-footer"><span class="product-price">129 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-product="onyks_malachit" data-category="transformacja">
+          <div class="product-image"><img src="images/Onyks__Malachit.jpg" alt="Bransoletka Onyks i Malachit" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Onyks & Malachit</h3><p class="product-stone">Elegancka Transformacja</p><p class="product-energy">Ochrona · Przemiana · Natura</p><div class="product-footer"><span class="product-price">119 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-product="onyks_tygrysie" data-category="siła">
+          <div class="product-image"><img src="images/ONYKS_i_T_O_1.jpg" alt="Bransoletka Onyks i Tygrysie Oko" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Onyks & Tygrysie Oko</h3><p class="product-stone">Niezłomna Wola</p><p class="product-energy">Siła · Odwaga · Determinacja</p><div class="product-footer"><span class="product-price">119 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal" data-product="onyks_piasek" data-category="spokój">
+          <div class="product-image"><img src="images/Anyks__Piasek_Pustyni.jpg" alt="Bransoletka Onyks i Piasek Pustyni" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div><span class="product-badge">Nowość</span></div>
+          <div class="product-info"><h3 class="product-name">Onyks & Piasek Pustyni</h3><p class="product-stone">Złote Piaski</p><p class="product-energy">Ciepło · Elegancja · Światło</p><div class="product-footer"><span class="product-price">109 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-product="kwarc_onyks" data-category="miłość">
+          <div class="product-image"><img src="images/Rozowy_Kwarc_i_Onyks_2.jpg" alt="Bransoletka Różowy Kwarc i Onyks" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Różowy Kwarc & Onyks</h3><p class="product-stone">Miłość i Ochrona</p><p class="product-energy">Miłość · Równowaga · Serce</p><div class="product-footer"><span class="product-price">119 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-product="onyks_tygrysie2" data-category="siła">
+          <div class="product-image"><img src="images/Onyks_i_Tygrysie_Oko.jpg" alt="Bransoletka Onyks i Tygrysie Oko II" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div></div>
+          <div class="product-info"><h3 class="product-name">Onyks & Tygrysie Oko II</h3><p class="product-stone">Złoty Wojownik</p><p class="product-energy">Ochrona · Ambicja · Energia</p><div class="product-footer"><span class="product-price">115 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal" data-product="knait_kunzyt" data-category="szlachetne">
+          <div class="product-image"><img src="images/Kyanit_i_Kunzyt_1.jpg" alt="Bransoletka Kyanit i Kunzyt" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div><span class="product-badge product-badge--precious">Szlachetny</span></div>
+          <div class="product-info"><h3 class="product-name">Kyanit i Kunzyt</h3><p class="product-stone">Spokój Serca</p><p class="product-energy">Komunikacja · Miłość · Dusza</p><div class="product-footer"><span class="product-price">249 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-product="szmaragd" data-category="szlachetne">
+          <div class="product-image"><img src="images/Szmaragd_1.jpg" alt="Bransoletka Szmaragd" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div><span class="product-badge product-badge--precious">Szlachetny</span></div>
+          <div class="product-info"><h3 class="product-name">Szmaragd</h3><p class="product-stone">Kamień Mądrości</p><p class="product-energy">Mądrość · Wzrost · Wyjątkowość</p><div class="product-footer"><span class="product-price">349 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-product="szafir" data-category="szlachetne">
+          <div class="product-image"><img src="images/Szafir_1.jpg" alt="Bransoletka Szafir" loading="lazy"><div class="product-image-overlay"><button class="product-quick-view">Podgląd</button></div><span class="product-badge product-badge--precious">Szlachetny</span></div>
+          <div class="product-info"><h3 class="product-name">Szafir</h3><p class="product-stone">Szlachetny Błękit</p><p class="product-energy">Mądrość · Lojalność · Jasność</p><div class="product-footer"><span class="product-price">399 <small>zł</small></span><button class="add-to-cart-btn" aria-label="Dodaj do koszyka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="energy-section" id="przewodnik">
+    <div class="container">
+      <div class="energy-header">
+        <p class="section-label reveal">Przewodnik po kamieniach</p>
+        <h2 class="section-title reveal reveal-delay-1">Moc <em>minerałów</em></h2>
+        <p class="about-text reveal reveal-delay-2" style="text-align:center;">Każdy kamień — naturalny i szlachetny — posiada unikalne właściwości energetyczne, które od wieków wykorzystywane są w praktykach duchowych i codziennym życiu.</p>
+      </div>
+      <div class="energy-subsection-label reveal">Kamienie Naturalne</div>
+      <div class="energy-grid">
+        <div class="energy-card reveal"><div class="energy-icon" style="background:rgba(110,110,110,0.1);color:#686868;">◆</div><h3 class="energy-card-title">Biały Agat</h3><p class="energy-card-desc">Kamień nadziei i wewnętrznego spokoju. Sprzyja wyciszeniu, wspiera koncentrację i uwalnia od napięć. Wprowadza łagodną, harmonijną energię.</p></div>
+        <div class="energy-card reveal reveal-delay-1"><div class="energy-icon" style="background:rgba(30,30,30,0.1);color:#383838;">◆</div><h3 class="energy-card-title">Onyks</h3><p class="energy-card-desc">Kamień wewnętrznej siły i samodyscypliny. W wersji matowej emanuje surową elegancją, fasetowany — symbolizuje wielowymiarowość charakteru.</p></div>
+        <div class="energy-card reveal reveal-delay-2"><div class="energy-icon" style="background:rgba(60,100,170,0.12);color:#3060a0;">◆</div><h3 class="energy-card-title">Labradoryt</h3><p class="energy-card-desc">Kamień gwiazd z efektem iryzacji. Pomaga odnaleźć drogę w momentach niepewności, chroni aurę i rozbudza kreatywność.</p></div>
+        <div class="energy-card reveal reveal-delay-3"><div class="energy-icon" style="background:rgba(160,40,40,0.1);color:#a02828;">◆</div><h3 class="energy-card-title">Lawa Wulkaniczna</h3><p class="energy-card-desc">Czysta energia żywiołów zamknięta w porowatej strukturze. Łączy potęgę ognia ze stabilnością ziemi. Kamień odrodzenia.</p></div>
+        <div class="energy-card reveal"><div class="energy-icon" style="background:rgba(150,110,30,0.12);color:#8a6418;">◆</div><h3 class="energy-card-title">Tygrysie Oko</h3><p class="energy-card-desc">Kamień siły, odwagi i pewności siebie. Rzadka odmiana kwarcu, od starożytności uznawana za potężny amulet ochronny.</p></div>
+        <div class="energy-card reveal reveal-delay-1"><div class="energy-icon" style="background:rgba(20,130,55,0.12);color:#157034;">◆</div><h3 class="energy-card-title">Malachit</h3><p class="energy-card-desc">Kamień transformacji i nowych możliwości. Otwiera na pozytywne zmiany i pomaga odważnie kroczyć przez życie.</p></div>
+        <div class="energy-card reveal reveal-delay-2"><div class="energy-icon" style="background:rgba(180,60,90,0.1);color:#a03055;">◆</div><h3 class="energy-card-title">Kwarc Różowy</h3><p class="energy-card-desc">Kamień bezwarunkowej miłości i współczucia. Harmonizuje czakrę serca, pomaga otworzyć się na miłość.</p></div>
+        <div class="energy-card reveal reveal-delay-3"><div class="energy-icon" style="background:rgba(80,80,180,0.1);color:#484898;">◆</div><h3 class="energy-card-title">Kryształ Górski</h3><p class="energy-card-desc">Najczystsza forma kwarcu — symbol przejrzystości. Działa jak wzmacniacz energii, oczyszcza umysł i potęguje działanie innych kamieni.</p></div>
+      </div>
+
+      <div class="energy-subsection-label energy-subsection-label--precious reveal">Kamienie Szlachetne</div>
+      <div class="energy-grid energy-grid--precious">
+        <div class="energy-card energy-card--precious reveal"><div class="energy-icon" style="background:rgba(60,100,200,0.12);color:#3050b0;">✦</div><h3 class="energy-card-title">Kyanit</h3><p class="energy-card-desc">Kamień szlachetny o niebiańskim błękicie. Wspomaga komunikację, samoekspresję i klarowność myśli. Nie wymaga oczyszczania — sam z siebie odprowadza negatywną energię.</p></div>
+        <div class="energy-card energy-card--precious reveal reveal-delay-1"><div class="energy-icon" style="background:rgba(20,120,60,0.12);color:#0d7a3c;">✦</div><h3 class="energy-card-title">Szmaragd</h3><p class="energy-card-desc">Jeden z czterech wielkich kamieni szlachetnych. Symbol mądrości, wzrostu i odnowy od czasów starożytnych. Każdy szmaragd jest absolutnie unikalny — żaden nie jest identyczny z drugim.</p></div>
+        <div class="energy-card energy-card--precious reveal reveal-delay-2"><div class="energy-icon" style="background:rgba(30,60,180,0.12);color:#1e4ab4;">✦</div><h3 class="energy-card-title">Szafir</h3><p class="energy-card-desc">Symbol królewskiej lojalności i mądrości. Głęboki błękit szafiru działa jak kotwica umysłu — wspiera jasność myślenia i spokój ducha w momentach chaosu.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section section--dark">
+    <div class="container">
+      <p class="quote-text-main reveal">„Nie potrzebujesz blichtru, by zaznaczyć swoją obecność — Twoja siła płynie z charakteru i autentyczności"</p>
+      <p class="quote-author reveal reveal-delay-1">AgereArt</p>
+    </div>
+  </section>
+
+  <section class="gift-section" id="prezent">
+    <div class="container">
+      <div class="gift-grid">
+        <div class="gift-image-wrapper reveal"><img src="images/Pudelko.jpg" alt="Eleganckie pudełko prezentowe" loading="lazy"></div>
+        <div class="gift-content">
+          <p class="section-label reveal">Idealny prezent</p>
+          <h2 class="section-title reveal reveal-delay-1">Podaruj <em>energię</em> bliskiej osobie</h2>
+          <p class="about-text reveal reveal-delay-2">Każda bransoletka AgereArt jest dostarczana w eleganckim czarnym pudełku prezentowym z satynową czerwoną wstążką. Wewnątrz znajdziesz złotą kartę z opisem właściwości kamienia — bo każdy prezent powinien nieść ze sobą historię i znaczenie.</p>
+          <div class="gift-features reveal reveal-delay-3">
+            <div class="gift-feature"><div class="gift-feature-icon">✦</div><div class="gift-feature-text"><h4>Eleganckie opakowanie</h4><p>Czarne pudełko ze złotą kartą i satynową czerwoną wstążką — gotowe do wręczenia.</p></div></div>
+            <div class="gift-feature"><div class="gift-feature-icon">✦</div><div class="gift-feature-text"><h4>Karta z opisem kamienia</h4><p>Każda bransoletka zawiera kartę z właściwościami energetycznymi minerału.</p></div></div>
+            <div class="gift-feature"><div class="gift-feature-icon">✦</div><div class="gift-feature-text"><h4>Darmowa wysyłka od 150 zł</h4><p>Bezpieczna dostawa kurierem lub do paczkomatu na terenie całej Polski.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header"><p class="section-label reveal">Opinie</p><h2 class="section-title reveal reveal-delay-1">Co mówią nasi <em>klienci</em></h2></div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal"><div class="testimonial-stars">★ ★ ★ ★ ★</div><p class="testimonial-text">„Bransoletka Onyks & Labradoryt jest absolutnie hipnotyzująca — głębia kolorów i jakość wykonania przerosły moje oczekiwania. Opakowanie ze złotą kartą to piękny detal!"</p><div class="testimonial-author"><div class="testimonial-avatar">A</div><div><div class="testimonial-name">Agnieszka M.</div><div class="testimonial-date">Luty 2026</div></div></div></div>
+        <div class="testimonial-card reveal reveal-delay-1"><div class="testimonial-stars">★ ★ ★ ★ ★</div><p class="testimonial-text">„Zamówiłem Różowy Kwarc & Onyks dla siostry na urodziny. Kiedy zobaczyła kartę z opisem właściwości kamieni, wzruszyła się. Przepiękna biżuteria z głębokim znaczeniem."</p><div class="testimonial-author"><div class="testimonial-avatar">K</div><div><div class="testimonial-name">Krzysztof W.</div><div class="testimonial-date">Styczeń 2026</div></div></div></div>
+        <div class="testimonial-card reveal reveal-delay-2"><div class="testimonial-stars">★ ★ ★ ★ ★</div><p class="testimonial-text">„Lawa i Tygrysie Oko to moja codzienność — dodaje mi energii i pewności siebie. Widać, że każda bransoletka jest ręcznie robiona z sercem. Na pewno wrócę po więcej!"</p><div class="testimonial-author"><div class="testimonial-avatar">M</div><div><div class="testimonial-name">Magdalena K.</div><div class="testimonial-date">Grudzień 2025</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-section">
+    <div class="container">
+      <div class="social-section-header">
+        <p class="section-label reveal">Znajdź nas w sieci</p>
+        <h2 class="section-title reveal reveal-delay-1">Bądź z nami <em>na bieżąco</em></h2>
+        <p class="about-text reveal reveal-delay-2" style="text-align:center;max-width:520px;margin:0 auto;">Śledź nasze kolekcje, inspiracje i kulisy powstawania biżuterii — codziennie nowe treści.</p>
+      </div>
+      <div class="social-cards">
+        <!-- Replace href values with your actual profile URLs -->
+        <a href="YOUR_INSTAGRAM_URL" target="_blank" rel="noopener" class="social-card reveal" data-platform="instagram">
+          <div class="social-card-top">
+            <div class="social-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div class="social-card-name">Instagram</div>
+          </div>
+          <div class="social-card-handle">@agereartpl</div>
+          <p class="social-card-desc">Zdjęcia kolekcji, stylizacje i kulisy ręcznego tworzenia każdej bransoletki.</p>
+          <div class="social-card-cta">
+            <span>Obserwuj</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        <a href="YOUR_FACEBOOK_URL" target="_blank" rel="noopener" class="social-card reveal reveal-delay-1" data-platform="facebook">
+          <div class="social-card-top">
+            <div class="social-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </div>
+            <div class="social-card-name">Facebook</div>
+          </div>
+          <div class="social-card-handle">AgereArt</div>
+          <p class="social-card-desc">Aktualności, wyprzedaże i ekskluzywne oferty dla obserwujących nasz profil.</p>
+          <div class="social-card-cta">
+            <span>Polub nas</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        <a href="YOUR_TIKTOK_URL" target="_blank" rel="noopener" class="social-card reveal reveal-delay-2" data-platform="tiktok">
+          <div class="social-card-top">
+            <div class="social-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+            </div>
+            <div class="social-card-name">TikTok</div>
+          </div>
+          <div class="social-card-handle">@agereartpl</div>
+          <p class="social-card-desc">Filmy z procesu tworzenia, unboxingi i inspiracje ze świata kamieni naturalnych.</p>
+          <div class="social-card-cta">
+            <span>Obserwuj</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="container"><div class="newsletter-inner"><div class="newsletter-text"><h3>Dołącz do naszego świata</h3><p>Otrzymuj inspiracje, nowości i ekskluzywne oferty prosto na swoją skrzynkę.</p></div><form class="newsletter-form"><input type="email" placeholder="Twój adres e-mail" required><button type="submit">Zapisz się</button></form></div></div>
+  </section>
+
+  <section class="contact-section" id="kontakt">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label reveal">Kontakt</p>
+          <h2 class="section-title reveal reveal-delay-1">Porozmawiajmy o Twoim <em>kamieniu</em></h2>
+          <p class="about-text reveal reveal-delay-2">Masz pytanie dotyczące właściwości kamieni? Potrzebujesz pomocy w doborze bransoletki? Chcesz zamówić indywidualny projekt? Napisz do nas — chętnie pomożemy.</p>
+          <div class="contact-details reveal reveal-delay-3">
+            <div class="contact-detail"><div class="contact-detail-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="contact-detail-text"><strong>Email</strong>kontakt@agereart.pl</div></div>
+            <div class="contact-detail"><div class="contact-detail-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="contact-detail-text"><strong>Lokalizacja</strong>Polska — wysyłka na terenie całego kraju</div></div>
+            <div class="contact-detail"><div class="contact-detail-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="contact-detail-text"><strong>Czas realizacji</strong>1–3 dni robocze</div></div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-row"><div class="form-group"><label for="name">Imię *</label><input type="text" id="name" name="name" placeholder="Twoje imię" required></div><div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="twoj@email.pl" required></div></div>
+          <div class="form-group"><label for="subject">Temat</label><select id="subject" name="subject"><option value="">Wybierz temat...</option><option value="zamówienie">Pytanie o zamówienie</option><option value="dobór">Pomoc w doborze kamienia</option><option value="indywidualny">Projekt indywidualny</option><option value="współpraca">Współpraca</option><option value="inne">Inne</option></select></div>
+          <div class="form-group"><label for="message">Wiadomość *</label><textarea id="message" name="message" placeholder="Napisz swoją wiadomość..." required></textarea></div>
+          <button type="submit" class="form-submit"><span>Wyślij wiadomość</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer section--dark">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="#" class="logo"><img src="images/AgereArtLogo.png" alt="AgereArt" class="logo-img logo-img--footer"></a><p>Ręcznie robione bransoletki z kamieni naturalnych. Każdy kamień niesie w sobie energię natury i milionów lat historii Ziemi.</p><div class="footer-social"><a href="YOUR_INSTAGRAM_URL" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a href="YOUR_FACEBOOK_URL" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="YOUR_TIKTOK_URL" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a></div></div>
+        <div class="footer-col"><h4>Sklep</h4><a href="#kolekcja">Wszystkie bransoletki</a><a href="#kolekcja">Nowości</a><a href="#kolekcja">Bestsellery</a><a href="#prezent">Zestawy prezentowe</a></div>
+        <div class="footer-col"><h4>Informacje</h4><a href="#o-nas">O nas</a><a href="#przewodnik">Przewodnik po kamieniach</a><a href="#">Dostawa i płatności</a><a href="#">Regulamin</a></div>
+        <div class="footer-col"><h4>Pomoc</h4><a href="#kontakt">Kontakt</a><a href="#">FAQ</a><a href="#">Zwroty i reklamacje</a><a href="#">Polityka prywatności</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; <span class="current-year">2026</span> AgereArt. Wszelkie prawa zastrzeżone.</p><div class="footer-payments"><span>BLIK</span><span>Przelewy24</span><span>VISA</span><span>Mastercard</span></div></div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Zamknij"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <img class="modal-image" src="" alt="Podgląd produktu" loading="lazy">
+      <div class="modal-body">
+        <div class="stone-name"></div><div class="stone-subtitle"></div><p class="stone-desc"></p>
+        <div class="stone-properties modal-properties"></div>
+        <div class="modal-size-row">
+          <span class="modal-size-label">Rozmiar:</span>
+          <span class="modal-size-fixed">25 cm (regulowana)</span>
+        </div>
+        <div class="modal-personalisation-row">
+          <label class="modal-personalisation-label" for="modal-personalisation">Dedykacja na złotej karcie <small>(opcjonalnie, maks. 100 znaków)</small></label>
+          <textarea id="modal-personalisation" class="modal-personalisation-input" placeholder='np. „Dla Mamy z miłością" lub Twoja osobista wiadomość...' maxlength="100" rows="3"></textarea>
+        </div>
+        <div class="modal-price-row"><span class="modal-price"></span><button class="modal-add-btn" data-product="">Dodaj do koszyka</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+    <div class="cart-panel">
+      <div class="cart-panel-header">
+        <div class="cart-panel-header-left">
+          <h3>Koszyk</h3>
+          <span class="cart-panel-count" id="cart-panel-count"></span>
+        </div>
+        <button class="cart-panel-close" id="cart-panel-close" aria-label="Zamknij koszyk">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="cart-panel-body">
+        <div class="cart-empty-state" id="cart-empty-state">
+          <div class="cart-empty-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+          </div>
+          <p>Twój koszyk jest pusty</p>
+          <span>Odkryj naszą kolekcję i dodaj coś wyjątkowego</span>
+        </div>
+        <div class="cart-items-list" id="cart-items-list"></div>
+      </div>
+      <div class="cart-panel-footer" id="cart-panel-footer">
+        <div class="cart-shipping-bar">
+          <div class="cart-shipping-text" id="cart-shipping-text">Darmowa wysyłka od 150 zł</div>
+          <div class="cart-shipping-track"><div class="cart-shipping-fill" id="cart-shipping-fill"></div></div>
+        </div>
+        <div class="cart-totals">
+          <div class="cart-total-row"><span>Razem</span><span class="cart-subtotal-amount" id="cart-subtotal">0 zł</span></div>
+          <div class="cart-total-row cart-shipping-row"><span>Wysyłka</span><span id="cart-shipping-cost">obliczana przy kasie</span></div>
+        </div>
+        <button class="cart-checkout-btn" id="cart-checkout-btn">
+          <span>Przejdź do kasy</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <a href="YOUR_ALLEGRO_STORE_URL" target="_blank" rel="noopener" class="allegro-btn allegro-btn--cart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          Kup na Allegro.pl
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-overlay" id="checkout-overlay">
+    <div class="checkout-modal">
+      <div class="checkout-modal-header">
+        <button class="checkout-back-btn" id="checkout-back-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Wróć
+        </button>
+        <h3 id="checkout-title">Dane dostawy</h3>
+        <button class="checkout-close-btn" id="checkout-close-btn" aria-label="Zamknij">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="checkout-steps-indicator">
+        <div class="checkout-step-dot active" id="dot-1"><span>1</span></div>
+        <div class="checkout-step-line"><div class="checkout-step-line-fill" id="step-line-fill"></div></div>
+        <div class="checkout-step-dot" id="dot-2"><span>2</span></div>
+      </div>
+      <div class="checkout-modal-body">
+        <!-- Step 1: Delivery details -->
+        <div class="checkout-pane active" id="pane-details">
+          <form class="checkout-form" id="checkout-form" novalidate>
+            <div class="checkout-field">
+              <label for="co-name">Imię i nazwisko *</label>
+              <input type="text" id="co-name" name="fullName" placeholder="Anna Kowalska" required>
+            </div>
+            <div class="checkout-field-row">
+              <div class="checkout-field">
+                <label for="co-email">Email *</label>
+                <input type="email" id="co-email" name="email" placeholder="anna@email.pl" required>
+              </div>
+              <div class="checkout-field">
+                <label for="co-phone">Telefon</label>
+                <input type="tel" id="co-phone" name="phone" placeholder="+48 000 000 000">
+              </div>
+            </div>
+            <div class="checkout-field">
+              <label for="co-address">Adres *</label>
+              <input type="text" id="co-address" name="address" placeholder="ul. Kwiatowa 5/10" required>
+            </div>
+            <div class="checkout-field-row">
+              <div class="checkout-field">
+                <label for="co-city">Miasto *</label>
+                <input type="text" id="co-city" name="city" placeholder="Warszawa" required>
+              </div>
+              <div class="checkout-field checkout-field--short">
+                <label for="co-postal">Kod pocztowy *</label>
+                <input type="text" id="co-postal" name="postal" placeholder="00-000" required>
+              </div>
+            </div>
+            <button type="submit" class="checkout-next-btn">
+              <span>Dalej — Płatność</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+        <!-- Step 2: Payment -->
+        <div class="checkout-pane" id="pane-payment">
+          <div class="checkout-order-review" id="checkout-order-review"></div>
+          <div class="checkout-payment-section">
+            <p class="checkout-payment-label">Wybierz metodę płatności</p>
+            <div id="paypal-button-container"></div>
+            <div class="payment-divider"><span>lub</span></div>
+            <!-- Replace YOUR_ALLEGRO_STORE_URL with your Allegro shop link -->
+            <a href="YOUR_ALLEGRO_STORE_URL" target="_blank" rel="noopener" class="allegro-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              Kup na Allegro.pl
+            </a>
+            <p class="checkout-secure-note">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              Bezpieczna płatność SSL
+            </p>
+          </div>
+        </div>
+        <!-- Step 3: Success -->
+        <div class="checkout-pane" id="pane-success">
+          <div class="checkout-success">
+            <div class="checkout-success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>Zamówienie złożone!</h4>
+            <p id="checkout-success-msg"></p>
+            <button class="cart-checkout-btn" id="checkout-done-btn">Zamknij</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PayPal SDK: replace YOUR_PAYPAL_CLIENT_ID with your PayPal Business client ID
+       from https://developer.paypal.com — set currency=PLN for Polish zloty -->
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=PLN&locale=pl_PL"></script>
+  <script src="script.js"></script>
+</body>
+</html>
