@@ -2746,9 +2746,13 @@ body::before {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   :root {
     --header-height: 64px;
+  }
+
+  .logo-img {
+    height: 40px;
   }
 
   .nav-toggle {
@@ -2809,28 +2813,56 @@ body::before {
     grid-template-columns: 1fr;
   }
 
+  .featured-image-main {
+    grid-row: span 1;
+    aspect-ratio: 4/5;
+  }
+
   .products-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    margin: 0;
   }
 
   .energy-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    margin: 0;
   }
 
   .testimonials-grid {
     grid-template-columns: 1fr;
-    max-width: 450px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
   }
 
   .shop-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .about-stats {
+    gap: 24px;
+  }
+
+  .contact-info {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .energy-grid {
+    grid-template-columns: 1fr;
   }
 
   .newsletter-inner {
@@ -2853,7 +2885,6 @@ body::before {
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 
   .footer-bottom {
@@ -2864,10 +2895,6 @@ body::before {
 
   .about-stats {
     gap: 24px;
-  }
-
-  .contact-info {
-    max-width: 100%;
   }
 }
 
