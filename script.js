@@ -10,170 +10,606 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Biały Agat',
       subtitle: 'Czysty Spokój',
       desc: 'Subtelna, elegancka i pełna światła. Biały Agat jest nazywany kamieniem nadziei. Sprzyja wyciszeniu, pomaga pozbyć się stresu i wprowadza łagodną energię do Twojego otoczenia. Idealna dla osób szukających wewnętrznego ukojenia.',
-      price: '89 zł',
-      image: 'images/Agat_bransoletka.jpg',
+      price: '65 zł',
+      image: 'images/AGAT_1_1_1.jpg',
+      images: ['images/AGAT_1_1_1.jpg', 'images/AGAT_1_1_2.jpg'],
       tags: ['Wyciszenie', 'Nadzieja', 'Harmonia']
     },
     agat_lawa: {
       name: 'Agat i Lawa',
       subtitle: 'Pierwotna Równowaga',
       desc: 'Mieszanka ziemskiego spokoju i wulkanicznego temperamentu. Agat to kamień harmonii, który uspokaja emocje, a porowata Lawa symbolizuje odrodzenie i siłę ognia. Idealna, by stać twardo na ziemi, nie tracąc przy tym wewnętrznej pasji.',
-      price: '99 zł',
-      image: 'images/Agat_i_Lawa1.jpg',
+      price: '65 zł',
+      image: 'images/AGATILAWA_2_1_1.jpg',
+      images: ['images/AGATILAWA_2_1_1.jpg', 'images/AGATILAWA_2_1_2.jpg'],
       tags: ['Harmonia', 'Odrodzenie', 'Pasja']
     },
     labradoryt: {
       name: 'Labradoryt',
       subtitle: 'Kamień Gwiazd',
       desc: 'Samodzielny Labradoryt to biżuteria pełna tajemnic. Nazywany „świątynią gwiazd", pomaga odnaleźć drogę w momentach niepewności i chroni aurę przed utratą energii. Każdy kamień jest inny, tak jak Twoja unikalna historia.',
-      price: '109 zł',
-      image: 'images/Labradoryt_1.jpg',
+      price: '65 zł',
+      image: 'images/LABRADORYT_4_1_1.jpg',
+      images: ['images/LABRADORYT_4_1_1.jpg', 'images/LABRADORYT_4_1_2.jpg'],
       tags: ['Tajemnica', 'Ochrona', 'Intuicja']
     },
     labradoryt_agat: {
       name: 'Labradoryt i Agat',
       subtitle: 'Intuicja i Ugruntowanie',
       desc: 'Mistyczny Labradoryt z jego niebiesko-zielonymi błyskami to kamień wizjonerów, który rozbudza kreatywność. W połączeniu z solidnym Agatem, pozwala bezpiecznie stąpać po ziemi, jednocześnie nie przestając marzyć.',
-      price: '119 zł',
-      image: 'images/Labradoryt_i_Agat_1.jpg',
+      price: '65 zł',
+      image: 'images/LABRADORYTIAGAT_5_1_1.jpg',
+      images: ['images/LABRADORYTIAGAT_5_1_1.jpg', 'images/LABRADORYTIAGAT_5_1_2.jpg'],
       tags: ['Kreatywność', 'Wizja', 'Stabilność']
     },
     lawa: {
       name: 'Lawa Wulkaniczna',
       subtitle: 'Surowa Siła Odrodzenia',
       desc: 'Ta bransoletka to czysta energia żywiołów zamknięta w porowatej strukturze kamienia. Lawa wulkaniczna powstaje z zastygłej magmy — łączy w sobie potęgę ognia i stabilność ziemi. Jest to kamień dla osób, które potrzebują solidnego fundamentu, a jednocześnie chcą spalić to, co stare, by zrobić miejsce na nowe.',
-      price: '89 zł',
-      image: 'images/Lawa_Wulkaniczna_1.jpg',
+      price: '65 zł',
+      image: 'images/LAWA_3_1_1.jpg',
+      images: ['images/LAWA_3_1_1.jpg', 'images/LAWA_3_1_2.jpg'],
       tags: ['Ogień', 'Ziemia', 'Odrodzenie']
     },
     lawa_tygrysie: {
       name: 'Lawa i Tygrysie Oko',
       subtitle: 'Surowa Energia',
       desc: 'Połączenie żywiołów Ziemi i Ognia. Szorstka tekstura Lawy stabilizuje energię, a złociste Tygrysie Oko dodaje motywacji do działania. Bransoletka dla osób dynamicznych, które potrzebują codziennego zastrzyku pewności siebie.',
-      price: '109 zł',
-      image: 'images/Lawa_i_Tygrysie_Oko_1.jpg',
+      price: '65 zł',
+      image: 'images/LAWAITYGRYSIEOKO_6_1_1.jpg',
+      images: ['images/LAWAITYGRYSIEOKO_6_1_1.jpg', 'images/LAWAITYGRYSIEOKO_6_1_2.jpg'],
       tags: ['Pewność siebie', 'Motywacja', 'Żywioły']
     },
     lawa_malachit: {
       name: 'Lawa i Malachit',
       subtitle: 'Ogień i Natura',
       desc: 'Niesamowity kontrast czarnej, surowej Lawy i soczyście zielonego Malachitu. Lawa pomaga spalać negatywne emocje, a Malachit otwiera na transformację i nowe możliwości. To połączenie dla tych, którzy chcą odważnie iść przez życie.',
-      price: '119 zł',
-      image: 'images/Lawa_i_Malachit_1.jpg',
+      price: '65 zł',
+      image: 'images/LAWAIMALACHIT_7_1_1.jpg',
+      images: ['images/LAWAIMALACHIT_7_1_1.jpg', 'images/LAWAIMALACHIT_7_1_2.jpg'],
       tags: ['Transformacja', 'Odwaga', 'Nowe możliwości']
     },
     onyks_fasetowany: {
       name: 'Onyks Fasetowany',
       subtitle: 'Szlifowana Wytrwałość',
       desc: 'Klasyka w najbardziej luksusowym wydaniu. Onyks fasetowany dzięki swoim licznym ściankom odbija światło, symbolizując wielowymiarowość ludzkiego charakteru. To kamień dla liderów — wzmacnia autorytet i pomaga przejąć kontrolę nad własnym losem.',
-      price: '99 zł',
-      image: 'images/Onyks_Fasetowany_1.jpg',
+      price: '65 zł',
+      image: 'images/ONYKS_8_1_1.jpg',
+      images: ['images/ONYKS_8_1_1.jpg', 'images/ONYKS_8_1_2.jpg'],
       tags: ['Autorytet', 'Kontrola', 'Luksus']
     },
     onyks_matowy: {
       name: 'Onyks Matowy',
       subtitle: 'Głęboka Cisza i Wewnętrzna Moc',
       desc: 'Onyks w wersji matowej to kwintesencja surowej elegancji. Pozbawiony blasku, skupia całą swoją energię wewnątrz, emanując spokojem i niezachwianą pewnością siebie. To kamień dla tych, którzy nie potrzebują blichtru, by zaznaczyć swoją obecność — ich siła płynie z charakteru i autentyczności.',
-      price: '95 zł',
-      image: 'images/Onyks_Matowy_1.jpg',
+      price: '65 zł',
+      image: 'images/ONYKS_8_2_1.jpg',
+      images: ['images/ONYKS_8_2_1.jpg', 'images/ONYKS_8_2_2.jpg', 'images/ONYKS_8_2_3.jpg'],
       tags: ['Spokój', 'Pewność', 'Autentyczność']
     },
     onyks_krysztal: {
       name: 'Onyks i Kryształ Górski',
       subtitle: 'Jasność Umysłu',
       desc: 'Połączenie nocy i światła. Onyks buduje Twoją wewnętrzną dyscyplinę, podczas gdy Kryształ Górski działa jak wzmacniacz — oczyszcza umysł i potęguje energię innych kamieni. To duet dla osób poszukujących balansu i absolutnego skupienia.',
-      price: '109 zł',
-      image: 'images/Onyks_i_Krysztal_Gorski_1.jpg',
+      price: '65 zł',
+      image: 'images/ONYKSIKRYSZTALGORSKI_11_1_1.jpg',
+      images: ['images/ONYKSIKRYSZTALGORSKI_11_1_1.jpg', 'images/ONYKSIKRYSZTALGORSKI_11_1_2.jpg'],
       tags: ['Dyscyplina', 'Oczyszczenie', 'Fokus']
     },
     onyks_agat_fioletowy: {
       name: 'Onyks & Agat Fioletowy',
       subtitle: 'Królewska Intuicja',
       desc: 'Biżuteria, która łączy w sobie ziemską siłę z energią ducha. Głęboka, migocząca czerń fasetowanego onyksu stanowi idealną ramę dla hipnotyzujących odcieni fioletowego agatu. To zestawienie dla osób, które szukają w życiu czegoś więcej — harmonii między logiką a intuicją.',
-      price: '119 zł',
-      image: 'images/Onyks_Fasetowan_2.jpg',
+      price: '65 zł',
+      image: 'images/ONYKSIAGAT_9_1_1.jpg',
+      images: ['images/ONYKSIAGAT_9_1_1.jpg', 'images/ONYKSIAGAT_9_1_2.jpg'],
       tags: ['Harmonia', 'Logika', 'Intuicja']
     },
     onyks_jaspis: {
       name: 'Onyks & Jaspis Różowy',
       subtitle: 'Siła i Łagodność',
       desc: 'Bransoletka, która łączy w sobie siłę i zdecydowanie z empatią i wewnętrznym ciepłem. Głęboka, lśniąca czerń fasetowanego onyksu spotyka się tu z pudrowymi, ziemistymi odcieniami różowego jaspisu, tworząc duet pełen klasy i wdzięku.',
-      price: '119 zł',
-      image: 'images/Onyks_Fasetowan_i_Japis_rozowy_1.jpg',
+      price: '65 zł',
+      image: 'images/ONYKSIJAPIS_10_1_1.jpg',
+      images: ['images/ONYKSIJAPIS_10_1_1.jpg', 'images/ONYKSIJAPIS_10_1_2.jpg'],
       tags: ['Empatia', 'Ciepło', 'Klasa']
     },
     onyks_labradoryt: {
       name: 'Onyks & Labradoryt',
       subtitle: 'Mistyczna Noc',
       desc: 'Odkryj biżuterię, która skrywa w sobie tajemnicę. Połączenie głębokiej, aksamitnej czerni matowego onyksu z hipnotyzującym labradorytem to zestawienie dla osób o silnej intuicji, które cenią sobie dodatki nieoczywiste i pełne klasy. To bransoletka, która przyciąga spojrzenia nie blaskiem, lecz swoją głębią.',
-      price: '129 zł',
-      image: 'images/Onyks_Matow1_i_labradoryt_1.jpg',
+      price: '65 zł',
+      image: 'images/LABRADORYTIONYKS_14_1_1.jpg',
+      images: ['images/LABRADORYTIONYKS_14_1_1.jpg', 'images/LABRADORYTIONYKS_14_1_2.jpg', 'images/LABRADORYTIONYKS_14_1_3.jpg'],
       tags: ['Tajemnica', 'Głębia', 'Klasa']
     },
     onyks_malachit: {
       name: 'Onyks & Malachit',
       subtitle: 'Elegancka Transformacja',
       desc: 'Wyrafinowane połączenie głębokiego, czarnego onyksu z intensywnie zielonym malachitem. Onyks zapewnia wewnętrzną siłę i ochronę, a malachit otwiera na pozytywne zmiany i transformację. Bransoletka dla osób gotowych na nowy rozdział życia.',
-      price: '119 zł',
-      image: 'images/Onyks__Malachit.jpg',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_1_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_1_1.jpg', 'images/ONYKSIMALACHIT_13_1_2.jpg'],
       tags: ['Ochrona', 'Przemiana', 'Natura']
     },
     onyks_tygrysie: {
       name: 'Onyks & Tygrysie Oko',
       subtitle: 'Niezłomna Wola',
       desc: 'Potężne połączenie dwóch kamieni o silnej energii ochronnej. Czarny onyks daje fundament wewnętrznej siły, a złociste tygrysie oko dodaje odwagi i determinacji w dążeniu do celów. Bransoletka idealna dla osób stawiających czoła wyzwaniom.',
-      price: '119 zł',
-      image: 'images/ONYKS_i_T_O_1.jpg',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_1_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_1_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_1_2.jpg', 'images/ONYKSITYGRYSIEOKO_17_1_3.jpg'],
       tags: ['Siła', 'Odwaga', 'Determinacja']
     },
     onyks_piasek: {
       name: 'Onyks & Piasek Pustyni',
       subtitle: 'Złote Piaski',
       desc: 'Kontrast ciemnego onyksu i ciepłego, złocistego piaskowca pustyni tworzy bransoletkę o wyjątkowej harmonii kolorów. Piasek pustyni to sztuczny kamień o migotliwym połysku, który w zestawieniu z eleganckim onyksem prezentuje się luksusowo i nowocześnie.',
-      price: '109 zł',
-      image: 'images/Anyks__Piasek_Pustyni.jpg',
+      price: '65 zł',
+      image: 'images/ONYKSIPIASEKPUSTYNI_15_1_1.jpg',
+      images: ['images/ONYKSIPIASEKPUSTYNI_15_1_1.jpg', 'images/ONYKSIPIASEKPUSTYNI_15_1_2.jpg', 'images/ONYKSIPIASEKPUSTYNI_15_1_3.jpg'],
       tags: ['Ciepło', 'Elegancja', 'Światło']
     },
     kwarc_onyks: {
       name: 'Różowy Kwarc & Onyks',
       subtitle: 'Miłość i Ochrona',
       desc: 'Subtelne połączenie miłości i ochrony. Różowy kwarc pomaga odnaleźć równowagę emocji, spokój oraz harmonię serca. Onyks dodaje wewnętrznej siły i pewności siebie. Razem tworzą bransoletkę, która otula ciepłem i daje poczucie bezpieczeństwa.',
-      price: '119 zł',
-      image: 'images/Rozowy_Kwarc_i_Onyks_2.jpg',
+      price: '65 zł',
+      image: 'images/ONYKSIROZOWYKWARC_16_1_1.jpg',
+      images: ['images/ONYKSIROZOWYKWARC_16_1_1.jpg'],
       tags: ['Miłość', 'Równowaga', 'Serce']
     },
     onyks_tygrysie2: {
       name: 'Onyks & Tygrysie Oko II',
       subtitle: 'Złoty Wojownik',
       desc: 'Druga odsłona popularnego połączenia onyksu z tygrysim okiem. Ta wersja kładzie nacisk na złociste akcenty tygrysiego oka, które dodają bransoletce ciepłego blasku. Kamień ambicji i ochrony — dla osób, które wiedzą, czego chcą.',
-      price: '115 zł',
-      image: 'images/Onyks_i_Tygrysie_Oko.jpg',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_2_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_2_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_2_2.jpg', 'images/ONYKSITYGRYSIEOKO_17_2_3.jpg'],
       tags: ['Ochrona', 'Ambicja', 'Energia']
+    },
+    agat_lawa_2: {
+      name: 'Agat i Lawa II',
+      subtitle: 'Pierwotna Równowaga',
+      desc: 'Mieszanka ziemskiego spokoju i wulkanicznego temperamentu w drugim wzorze. Agat harmonizuje emocje, a porowata Lawa symbolizuje odrodzenie i siłę ognia.',
+      price: '65 zł',
+      image: 'images/AGATILAWA_2_2_1.jpg',
+      images: ['images/AGATILAWA_2_2_1.jpg', 'images/AGATILAWA_2_2_2.jpg'],
+      tags: ['Harmonia', 'Odrodzenie', 'Pasja']
+    },
+    agat_lawa_3: {
+      name: 'Agat i Lawa III',
+      subtitle: 'Pierwotna Równowaga',
+      desc: 'Trzecia odsłona klasycznego połączenia agatu i lawy. Idealna, by stać twardo na ziemi, nie tracąc wewnętrznej pasji.',
+      price: '65 zł',
+      image: 'images/AGATILAWA_2_3_1.jpg',
+      images: ['images/AGATILAWA_2_3_1.jpg', 'images/AGATILAWA_2_3_2.jpg'],
+      tags: ['Harmonia', 'Odrodzenie', 'Pasja']
+    },
+    lawa_2: {
+      name: 'Lawa Wulkaniczna II',
+      subtitle: 'Surowa Siła Odrodzenia',
+      desc: 'Czysta energia żywiołów zamknięta w porowatej strukturze kamienia w nowym wzorze. Potęga ognia i stabilność ziemi w jednej bransoletce.',
+      price: '65 zł',
+      image: 'images/LAWA_3_2_1.jpg',
+      images: ['images/LAWA_3_2_1.jpg', 'images/LAWA_3_2_2.jpg'],
+      tags: ['Ogień', 'Ziemia', 'Odrodzenie']
+    },
+    labradoryt_agat_2: {
+      name: 'Labradoryt i Agat II',
+      subtitle: 'Intuicja i Ugruntowanie',
+      desc: 'Mistyczny Labradoryt z jego niebiesko-zielonymi błyskami razem z solidnym Agatem — drugi wzór tego niezrównanego połączenia kamienia wizjonerów z kamieniem ziemi.',
+      price: '65 zł',
+      image: 'images/LABRADORYTIAGAT_5_2_1.jpg',
+      images: ['images/LABRADORYTIAGAT_5_2_1.jpg', 'images/LABRADORYTIAGAT_5_2_2.jpg'],
+      tags: ['Kreatywność', 'Wizja', 'Stabilność']
+    },
+    lawa_tygrysie_2: {
+      name: 'Lawa i Tygrysie Oko II',
+      subtitle: 'Surowa Energia',
+      desc: 'Drugi wzór energetycznego połączenia żywiołów Ziemi i Ognia. Lawa stabilizuje, Tygrysie Oko dodaje pewności siebie i motywacji.',
+      price: '65 zł',
+      image: 'images/LAWAITYGRYSIEOKO_6_2_1.jpg',
+      images: ['images/LAWAITYGRYSIEOKO_6_2_1.jpg', 'images/LAWAITYGRYSIEOKO_6_2_2.jpg', 'images/LAWAITYGRYSIEOKO_6_2_3.jpg'],
+      tags: ['Pewność siebie', 'Motywacja', 'Żywioły']
+    },
+    lawa_tygrysie_3: {
+      name: 'Lawa i Tygrysie Oko III',
+      subtitle: 'Surowa Energia',
+      desc: 'Trzecia odsłona popularnego połączenia lawy i tygrysiego oka. Bransoletka dla osób dynamicznych, które potrzebują codziennego zastrzyku energii.',
+      price: '65 zł',
+      image: 'images/LAWAITYGRYSIEOKO_6_3_1.jpg',
+      images: ['images/LAWAITYGRYSIEOKO_6_3_1.jpg', 'images/LAWAITYGRYSIEOKO_6_3_2.jpg'],
+      tags: ['Pewność siebie', 'Motywacja', 'Żywioły']
+    },
+    onyks_3: {
+      name: 'Onyks — wzór III',
+      subtitle: 'Wewnętrzna Moc',
+      desc: 'Elegancja onyksu w trzecim unikalnym wzorze. Kamień siły i samodyscypliny, ręcznie wykonany z dbałością o każdy detal.',
+      price: '65 zł',
+      image: 'images/ONYKS_8_3_1.jpg',
+      images: ['images/ONYKS_8_3_1.jpg', 'images/ONYKS_8_3_2.jpg'],
+      tags: ['Autorytet', 'Kontrola', 'Luksus']
+    },
+    onyks_4: {
+      name: 'Onyks — wzór IV',
+      subtitle: 'Wewnętrzna Moc',
+      desc: 'Czwarta odsłona kolekcji onyksowej. Surowa elegancja kamienia, który skupia całą swoją energię wewnątrz, emanując spokojem i pewnością siebie.',
+      price: '65 zł',
+      image: 'images/ONYKS_8_4_1.jpg',
+      images: ['images/ONYKS_8_4_1.jpg', 'images/ONYKS_8_4_2.jpg'],
+      tags: ['Autorytet', 'Kontrola', 'Luksus']
+    },
+    onyks_krysztal_2: {
+      name: 'Onyks i Kryształ Górski II',
+      subtitle: 'Jasność Umysłu',
+      desc: 'Drugi wzór duetu nocy i światła. Onyks buduje wewnętrzną dyscyplinę, Kryształ Górski oczyszcza umysł i wzmacnia energię.',
+      price: '65 zł',
+      image: 'images/ONYKSIKRYSZTALGORSKI_11_2_1.jpg',
+      images: ['images/ONYKSIKRYSZTALGORSKI_11_2_1.jpg', 'images/ONYKSIKRYSZTALGORSKI_11_2_2.jpg'],
+      tags: ['Dyscyplina', 'Oczyszczenie', 'Fokus']
+    },
+    onyks_krysztal_3: {
+      name: 'Onyks i Kryształ Górski III',
+      subtitle: 'Jasność Umysłu',
+      desc: 'Trzecia odsłona dla osób poszukujących balansu i absolutnego skupienia. Połączenie dyscypliny z jasnością umysłu.',
+      price: '65 zł',
+      image: 'images/ONYKSIKRYSZTALGORSKI_11_3_1.jpg',
+      images: ['images/ONYKSIKRYSZTALGORSKI_11_3_1.jpg', 'images/ONYKSIKRYSZTALGORSKI_11_3_2.jpg'],
+      tags: ['Dyscyplina', 'Oczyszczenie', 'Fokus']
+    },
+    onyks_krysztal_cytryn: {
+      name: 'Onyks, Kryształ & Cytryn',
+      subtitle: 'Światło i Obfitość',
+      desc: 'Wyjątkowe trójkowe połączenie — głęboki Onyks, przejrzysty Kryształ Górski i ciepły, złocisty Cytryn. Cytryn znany jest jako kamień słońca, radości i obfitości. Razem tworzą bransoletkę pełną dynamicznej, pozytywnej energii.',
+      price: '65 zł',
+      image: 'images/ONYKSIKRYSZTALGORSKIICYTRYN_12_1_1.jpg',
+      images: ['images/ONYKSIKRYSZTALGORSKIICYTRYN_12_1_1.jpg', 'images/ONYKSIKRYSZTALGORSKIICYTRYN_12_1_2.jpg'],
+      tags: ['Obfitość', 'Jasność', 'Radość']
+    },
+    onyks_malachit_2: {
+      name: 'Onyks & Malachit II',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Wyrafinowane połączenie głębokiego onyksu z intensywnie zielonym malachitem w drugim wzorze. Otwiera na pozytywne zmiany i transformację.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_2_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_2_1.jpg', 'images/ONYKSIMALACHIT_13_2_2.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_malachit_3: {
+      name: 'Onyks & Malachit III',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Trzecia odsłona połączenia czarnego onyksu i zielonego malachitu. Dla osób gotowych na nowy rozdział życia.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_3_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_3_1.jpg', 'images/ONYKSIMALACHIT_13_3_2.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_malachit_4: {
+      name: 'Onyks & Malachit IV',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Czwarty wzór wyrafinowanego połączenia onyksu z malachitem. Onyks zapewnia wewnętrzną siłę i ochronę, malachit inspiruje do zmian.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_4_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_4_1.jpg', 'images/ONYKSIMALACHIT_13_4_2.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_malachit_5: {
+      name: 'Onyks & Malachit V',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Piąta odsłona klasycznej pary. Soczysta zieleń malachitu i aksamitna czerń onyksu tworzą ponadczasowy duet.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_5_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_5_1.jpg', 'images/ONYKSIMALACHIT_13_5_2.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_malachit_6: {
+      name: 'Onyks & Malachit VI',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Szósta odsłona połączenia ochrony i transformacji. Każdy wzór jest unikalny, każda bransoletka — inna.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_6_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_6_1.jpg', 'images/ONYKSIMALACHIT_13_6_2.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_malachit_7: {
+      name: 'Onyks & Malachit VII',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Siódma odsłona ulubionego połączenia. Kontrastujące kolory malachitu i onyksu tworzą bransoletkę, która przyciąga wzrok.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_7_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_7_1.jpg', 'images/ONYKSIMALACHIT_13_7_2.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_malachit_8: {
+      name: 'Onyks & Malachit VIII',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Ósma wersja tego wyrafinowanego połączenia. Onyks i malachit — dwa kamienie transformacji w harmonijnej kompozycji.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_8_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_8_1.jpg', 'images/ONYKSIMALACHIT_13_8_2.jpg', 'images/ONYKSIMALACHIT_13_8_3.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_malachit_9: {
+      name: 'Onyks & Malachit IX',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Dziewiąta odsłona połączenia głębokiego onyksu z żywym zielonym malachitem. Dla tych, którzy cenią unikalność i jakość rzemiosła.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_9_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_9_1.jpg', 'images/ONYKSIMALACHIT_13_9_2.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_malachit_10: {
+      name: 'Onyks & Malachit X',
+      subtitle: 'Elegancka Transformacja',
+      desc: 'Dziesiąta i wyjątkowa odsłona kolekcji Onyks & Malachit. Każda bransoletka ręcznie wykonana, każdy wzór niepowtarzalny.',
+      price: '65 zł',
+      image: 'images/ONYKSIMALACHIT_13_10_1.jpg',
+      images: ['images/ONYKSIMALACHIT_13_10_1.jpg', 'images/ONYKSIMALACHIT_13_10_2.jpg'],
+      tags: ['Ochrona', 'Przemiana', 'Natura']
+    },
+    onyks_piasek_2: {
+      name: 'Onyks & Piasek Pustyni II',
+      subtitle: 'Złote Piaski',
+      desc: 'Drugi wzór harmonijnego kontrastu ciemnego onyksu i ciepłego piaskowca pustyni. Eleganckie, nowoczesne, luksusowe.',
+      price: '65 zł',
+      image: 'images/ONYKSIPIASEKPUSTYNI_15_2_1.jpg',
+      images: ['images/ONYKSIPIASEKPUSTYNI_15_2_1.jpg', 'images/ONYKSIPIASEKPUSTYNI_15_2_2.jpg'],
+      tags: ['Ciepło', 'Elegancja', 'Światło']
+    },
+    kwarc_onyks_2: {
+      name: 'Onyks & Różowy Kwarc II',
+      subtitle: 'Miłość i Ochrona',
+      desc: 'Drugi wzór subtelnego połączenia miłości i ochrony. Różowy kwarc i onyks razem otulają ciepłem i dają poczucie bezpieczeństwa.',
+      price: '65 zł',
+      image: 'images/ONYKSIROZOWYKWARC_16_2_1.jpg',
+      images: ['images/ONYKSIROZOWYKWARC_16_2_1.jpg'],
+      tags: ['Miłość', 'Równowaga', 'Serce']
+    },
+    kwarc_onyks_3: {
+      name: 'Onyks & Różowy Kwarc III',
+      subtitle: 'Miłość i Ochrona',
+      desc: 'Trzecia odsłona połączenia serca i siły. Różowy kwarc harmonizuje emocje, onyks dodaje pewności siebie.',
+      price: '65 zł',
+      image: 'images/ONYKSIROZOWYKWARC_16_3_1.jpg',
+      images: ['images/ONYKSIROZOWYKWARC_16_3_1.jpg', 'images/ONYKSIROZOWYKWARC_16_3_2.jpg'],
+      tags: ['Miłość', 'Równowaga', 'Serce']
+    },
+    onyks_tygrysie3: {
+      name: 'Onyks & Tygrysie Oko III',
+      subtitle: 'Niezłomna Wola',
+      desc: 'Trzecia odsłona potężnego połączenia ochrony i determinacji. Czarny onyks i złociste tygrysie oko — duet dla osób stawiających czoła wyzwaniom.',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_3_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_3_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_3_2.jpg', 'images/ONYKSITYGRYSIEOKO_17_3_3.jpg'],
+      tags: ['Siła', 'Odwaga', 'Determinacja']
+    },
+    onyks_tygrysie4: {
+      name: 'Onyks & Tygrysie Oko IV',
+      subtitle: 'Niezłomna Wola',
+      desc: 'Czwarta wersja nieodparcie silnego połączenia. Onyks fundamentem, tygrysie oko kompasem na drodze do celu.',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_4_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_4_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_4_2.jpg'],
+      tags: ['Siła', 'Odwaga', 'Determinacja']
+    },
+    onyks_tygrysie5: {
+      name: 'Onyks & Tygrysie Oko V',
+      subtitle: 'Niezłomna Wola',
+      desc: 'Piąta odsłona duetu siły. Złocisty blask tygrysiego oka ożywia głęboką czerń onyksu.',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_5_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_5_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_5_2.jpg'],
+      tags: ['Siła', 'Odwaga', 'Determinacja']
+    },
+    onyks_tygrysie6: {
+      name: 'Onyks & Tygrysie Oko VI',
+      subtitle: 'Niezłomna Wola',
+      desc: 'Szósta wersja popularnego połączenia ochrony i ambicji. Dla osób, które wiedzą, czego chcą i konsekwentnie dążą do celu.',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_6_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_6_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_6_2.jpg', 'images/ONYKSITYGRYSIEOKO_17_6_3.jpg'],
+      tags: ['Siła', 'Odwaga', 'Determinacja']
+    },
+    onyks_tygrysie7: {
+      name: 'Onyks & Tygrysie Oko VII',
+      subtitle: 'Niezłomna Wola',
+      desc: 'Siódma odsłona kolekcji. Każdy wzór ręcznie wykonany, każda bransoletka niepowtarzalna.',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_7_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_7_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_7_2.jpg', 'images/ONYKSITYGRYSIEOKO_17_7_3.jpg'],
+      tags: ['Siła', 'Odwaga', 'Determinacja']
+    },
+    onyks_tygrysie8: {
+      name: 'Onyks & Tygrysie Oko VIII',
+      subtitle: 'Niezłomna Wola',
+      desc: 'Ósma wersja tego energetycznego połączenia. Onyks i tygrysie oko — kamienie, które wzmacniają i chronią.',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_8_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_8_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_8_2.jpg', 'images/ONYKSITYGRYSIEOKO_17_8_3.jpg'],
+      tags: ['Siła', 'Odwaga', 'Determinacja']
+    },
+    onyks_tygrysie9: {
+      name: 'Onyks & Tygrysie Oko IX',
+      subtitle: 'Niezłomna Wola',
+      desc: 'Dziewiąta odsłona niezłomnej woli. Połączenie dwóch kamieni o silnej energii ochronnej w kolejnym wyjątkowym wzorze.',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_9_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_9_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_9_2.jpg'],
+      tags: ['Siła', 'Odwaga', 'Determinacja']
+    },
+    onyks_tygrysie10: {
+      name: 'Onyks & Tygrysie Oko X',
+      subtitle: 'Niezłomna Wola',
+      desc: 'Dziesiąta i wyjątkowa odsłona kolekcji Onyks & Tygrysie Oko. Kompletna kolekcja dla prawdziwych koneserów.',
+      price: '65 zł',
+      image: 'images/ONYKSITYGRYSIEOKO_17_10_1.jpg',
+      images: ['images/ONYKSITYGRYSIEOKO_17_10_1.jpg', 'images/ONYKSITYGRYSIEOKO_17_10_2.jpg'],
+      tags: ['Siła', 'Odwaga', 'Determinacja']
     },
     knait_kunzyt: {
       name: 'Kyanit i Kunzyt',
       subtitle: 'Spokój Serca',
       desc: 'Rzadkie i wyjątkowe połączenie dwóch szlachetnych minerałów. Kyanit o hipnotyzującym błękicie wspomaga komunikację i samoekspresję, a delikatny różowy Kunzyt — zwany kamieniem miłości — otwiera serce na bezwarunkowe uczucie. Bransoletka dla osób poszukujących harmonii duszy.',
-      price: '249 zł',
+      price: '65 zł',
       image: 'images/Kyanit_i_Kunzyt_1.jpg',
+      images: ['images/Kyanit_i_Kunzyt_1.jpg'],
       tags: ['Komunikacja', 'Miłość', 'Dusza']
     },
     szmaragd: {
       name: 'Szmaragd',
       subtitle: 'Kamień Mądrości',
       desc: 'Jeden z najcenniejszych kamieni szlachetnych świata, znany od starożytności. Soczysta, głęboka zieleń szmaragdu symbolizuje wzrost, mądrość i odnowę. Kleopatra i Aleksander Wielki cenili go ponad złoto. Każdy szmaragd jest absolutnie unikalny. Bransoletka dla tych, którzy wybierają wyjątkowość.',
-      price: '349 zł',
+      price: '65 zł',
       image: 'images/Szmaragd_1.jpg',
+      images: ['images/Szmaragd_1.jpg'],
       tags: ['Mądrość', 'Wzrost', 'Wyjątkowość']
     },
     szafir: {
       name: 'Szafir',
       subtitle: 'Szlachetny Błękit',
       desc: 'Symbol królewskiej lojalności, prawdy i mądrości od tysiącleci. Głęboki, niebiański błękit szafiru działa jak kotwica umysłu — pomaga zachować spokój w chwilach chaosu i wspiera jasność myślenia. Kamień przeznaczenia i ochrony. Dla tych, którzy wierzą w swoją drogę.',
-      price: '399 zł',
+      price: '65 zł',
       image: 'images/Szafir_1.jpg',
+      images: ['images/Szafir_1.jpg'],
       tags: ['Mądrość', 'Lojalność', 'Jasność']
+    },
+    turmalin_rozowy_kwarc: {
+      name: 'Turmalin i Różowy Kwarc',
+      subtitle: 'Miłość i Energia',
+      desc: 'Połączenie dwóch wyjątkowych minerałów o silnym działaniu na serce. Turmalin — kamień o szerokim spektrum barw — chroni i oczyszcza pole energetyczne, a delikatny Różowy Kwarc otwiera serce na miłość, współczucie i wewnętrzne ciepło. Razem tworzą bransoletkę o niezwykłej harmonii.',
+      price: '65 zł',
+      image: 'images/TURMALINIROZOWYKWARC_18_1_1.jpg',
+      images: ['images/TURMALINIROZOWYKWARC_18_1_1.jpg'],
+      tags: ['Miłość', 'Ochrona', 'Harmonia']
+    },
+    szmaragd_kunzyt: {
+      name: 'Szmaragd i Kunzyt',
+      subtitle: 'Serce i Mądrość',
+      desc: 'Rzadkie połączenie dwóch kamieni o głęboko serdecznej energii. Szmaragd — kamień Wenus i symbol wiecznej miłości — łączy się z delikatnym Kunzytem, zwanym „kamieniem miłości", który otwiera serce na bezwarunkowe uczucie. To biżuteria dla osób, które żyją sercem i kierują się intuicją.',
+      price: '165 zł',
+      image: 'images/SZMARAGDIKUNZYT_19_1_1.jpg',
+      images: ['images/SZMARAGDIKUNZYT_19_1_1.jpg', 'images/SZMARAGDIKUNZYT_19_1_2.jpg', 'images/SZMARAGDIKUNZYT_19_1_3.jpg', 'images/SZMARAGDIKUNZYT_19_1_4.jpg'],
+      tags: ['Miłość', 'Mądrość', 'Intuicja']
+    },
+    szafir_kyanit: {
+      name: 'Szafir i Kyanit',
+      subtitle: 'Niebiańska Jasność',
+      desc: 'Dwa błękitne kamienie o mistycznej głębi połączone w jednej bransoletce. Szafir — symbol królewskiej mądrości i lojalności — współgra z Kyanytem, który oczyszcza umysł i wspomaga komunikację. To zestawienie dla osób poszukujących jasności myśli i głębokiego spokoju.',
+      price: '165 zł',
+      image: 'images/SZAFIRIKYANIT_21_1_1.jpg',
+      images: ['images/SZAFIRIKYANIT_21_1_1.jpg', 'images/SZAFIRIKYANIT_21_1_2.jpg', 'images/SZAFIRIKYANIT_21_1_3.jpg'],
+      tags: ['Jasność', 'Mądrość', 'Spokój']
+    },
+    turmalin_kunzyt: {
+      name: 'Turmalin i Kunzyt',
+      subtitle: 'Ochrona Serca',
+      desc: 'Turmalin, jeden z najbardziej energetycznych minerałów, tworzy potężną tarczę ochronną, a Kunzyt — różowy kamień serca — wypełnia ją bezwarunkową miłością i łagodnością. Ta bransoletka jest jak uścisk — chroni i jednocześnie otula ciepłem.',
+      price: '65 zł',
+      image: 'images/TURMALINIKUNZYT_22_1_1.jpg',
+      images: ['images/TURMALINIKUNZYT_22_1_1.jpg', 'images/TURMALINIKUNZYT_22_1_2.jpg', 'images/TURMALINIKUNZYT_22_1_3.jpg'],
+      tags: ['Ochrona', 'Miłość', 'Łagodność']
+    },
+    rubin_kunzyt: {
+      name: 'Rubin i Kunzyt',
+      subtitle: 'Ogień i Miłość',
+      desc: 'Rubin — kamień królewskiej pasji, odwagi i żywotności — spotyka się z delikatnym, różowym Kunzytem. Ognisty temperament rubinu łagodzi Kunzyt, tworząc wyjątkowy duet: energia i miłość, namiętność i czułość. Bransoletka dla serc pełnych życia.',
+      price: '165 zł',
+      image: 'images/RUBINIKUNZYT_23_1_1.jpg',
+      images: ['images/RUBINIKUNZYT_23_1_1.jpg', 'images/RUBINIKUNZYT23_1_2.jpg', 'images/RUBINIKUNZYT23_1_3.jpg', 'images/RUBINIKUNZYT23_1_4.jpg'],
+      tags: ['Pasja', 'Miłość', 'Żywotność']
+    },
+    turmalin_rubin: {
+      name: 'Turmalin i Rubin',
+      subtitle: 'Ognista Ochrona',
+      desc: 'Połączenie dwóch kamieni o niezwykłej mocy. Turmalin buduje niewidzialną tarczę, która odpędza negatywną energię, a Rubin rozgrzewa serce i pobudza do odważnego działania. To bransoletka dla tych, którzy idą przez życie z głową wysoko, nie bojąc się wyzwań.',
+      price: '85 zł',
+      image: 'images/TURMALINIRUBIN_24_1_1.jpg',
+      images: ['images/TURMALINIRUBIN_24_1_1.jpg', 'images/TURMALINIRUBIN_24_1_2.jpg', 'images/TURMALINIRUBIN_24_1_3.jpg'],
+      tags: ['Ochrona', 'Odwaga', 'Siła']
+    },
+    turmalin_rubin_2: {
+      name: 'Turmalin i Rubin II',
+      subtitle: 'Ognista Ochrona',
+      desc: 'Druga odsłona potężnego połączenia Turmalinu i Rubinu. Każdy wzór jest unikalny, każda bransoletka ręcznie wykonana. Ten sam żar i ochrona — w nowej kompozycji.',
+      price: '85 zł',
+      image: 'images/TURMALINIRUBIN_24_2_1.jpg',
+      images: ['images/TURMALINIRUBIN_24_2_1.jpg', 'images/TURMALINIRUBIN_24_2_2.jpg', 'images/TURMALINIRUBIN_24_2_3.jpg'],
+      tags: ['Ochrona', 'Odwaga', 'Siła']
+    },
+    kyanit_rubin: {
+      name: 'Kyanit i Rubin',
+      subtitle: 'Błękit i Ogień',
+      desc: 'Kontrast, który urzeka. Lodowaty, spokojny błękit Kyanitu zderza się z ognistą czerwienią Rubinu, tworząc bransoletkę pełną napięcia i harmonii jednocześnie. Kyanit chłodzi umysł i wspomaga komunikację, Rubin rozgrzewa serce i dodaje odwagi. Dla tych, którzy lubią żyć pełnią życia.',
+      price: '165 zł',
+      image: 'images/KYANITIRUBIN_25_1_1.jpg',
+      images: ['images/KYANITIRUBIN_25_1_1.jpg', 'images/KYANITIRUBIN_25_1_2.jpg', 'images/KYANITIRUBIN_25_1_3.jpg'],
+      tags: ['Komunikacja', 'Odwaga', 'Równowaga']
     }
+  };
+
+  // --- Allegro URLs per product ---
+  const allegroUrls = {
+    agat:                   '',
+    agat_lawa:              '',
+    agat_lawa_2:            '',
+    agat_lawa_3:            '',
+    labradoryt:             '',
+    labradoryt_agat:        '',
+    labradoryt_agat_2:      '',
+    lawa:                   '',
+    lawa_2:                 '',
+    lawa_tygrysie:          '',
+    lawa_tygrysie_2:        '',
+    lawa_tygrysie_3:        '',
+    lawa_malachit:          '',
+    onyks_fasetowany:       '',
+    onyks_matowy:           '',
+    onyks_krysztal:         '',
+    onyks_krysztal_2:       '',
+    onyks_krysztal_3:       '',
+    onyks_krysztal_cytryn:  '',
+    onyks_agat_fioletowy:   '',
+    onyks_jaspis:           '',
+    onyks_labradoryt:       '',
+    onyks_malachit:         'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_2:       'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_3:       'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_4:       'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_5:       'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_6:       'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_7:       'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_8:       'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_9:       'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_malachit_10:      'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18353048845',
+    onyks_piasek:           '',
+    onyks_piasek_2:         '',
+    onyks_tygrysie:         '',
+    onyks_tygrysie2:        '',
+    onyks_tygrysie3:        '',
+    onyks_tygrysie4:        '',
+    onyks_tygrysie5:        '',
+    onyks_tygrysie6:        '',
+    onyks_tygrysie7:        '',
+    onyks_tygrysie8:        '',
+    onyks_tygrysie9:        '',
+    onyks_tygrysie10:       '',
+    onyks_3:                '',
+    onyks_4:                '',
+    kwarc_onyks:            '',
+    kwarc_onyks_2:          '',
+    kwarc_onyks_3:          '',
+    knait_kunzyt:           '',
+    szmaragd:               '',
+    szafir:                 '',
+    turmalin_rozowy_kwarc:  '',
+    szmaragd_kunzyt:        '',
+    szafir_kyanit:          '',
+    turmalin_kunzyt:        '',
+    rubin_kunzyt:           '',
+    turmalin_rubin:         '',
+    turmalin_rubin_2:       '',
+    kyanit_rubin:           '',
   };
 
   // --- Header Scroll Effect ---
@@ -222,27 +658,98 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Shop Filter ---
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  // --- Shop Toggle (expand/collapse) ---
+  const shopToggleBtn = document.getElementById('shop-toggle-btn');
+  const productsWrapper = document.getElementById('products-grid-wrapper');
+
+  const expandShop = () => {
+    productsWrapper.style.height = productsWrapper.scrollHeight + 'px';
+    shopToggleBtn.classList.add('open');
+    shopToggleBtn.setAttribute('aria-expanded', 'true');
+    productsWrapper.addEventListener('transitionend', () => {
+      productsWrapper.style.height = 'auto';
+    }, { once: true });
+  };
+
+  const collapseShop = () => {
+    productsWrapper.style.height = productsWrapper.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      productsWrapper.style.height = '0';
+    });
+    shopToggleBtn.classList.remove('open');
+    shopToggleBtn.setAttribute('aria-expanded', 'false');
+  };
+
+  if (shopToggleBtn) {
+    shopToggleBtn.addEventListener('click', () => {
+      if (shopToggleBtn.classList.contains('open')) {
+        collapseShop();
+        // Scroll back up to the section heading
+        setTimeout(() => {
+          document.getElementById('kolekcja').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 350);
+      } else {
+        expandShop();
+      }
+    });
+  }
+
+  // --- Shop Filter Dropdown ---
+  const filterTrigger = document.getElementById('filter-dropdown-trigger');
+  const filterMenu = document.getElementById('filter-dropdown-menu');
+  const filterLabel = document.querySelector('.filter-dropdown-label');
   const productCards = document.querySelectorAll('.product-card');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      productCards.forEach(card => {
-        const show = filter === 'all' || card.dataset.category === filter;
-        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        if (show) {
-          card.style.display = '';
-          requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
-        } else {
-          card.style.opacity = '0'; card.style.transform = 'translateY(20px)';
-          setTimeout(() => { card.style.display = 'none'; }, 400);
-        }
+
+  if (filterTrigger && filterMenu) {
+    const openFilterMenu = () => {
+      filterTrigger.classList.add('open');
+      filterTrigger.setAttribute('aria-expanded', 'true');
+      filterMenu.classList.add('open');
+    };
+
+    const closeFilterMenu = () => {
+      filterTrigger.classList.remove('open');
+      filterTrigger.setAttribute('aria-expanded', 'false');
+      filterMenu.classList.remove('open');
+    };
+
+    filterTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      filterTrigger.classList.contains('open') ? closeFilterMenu() : openFilterMenu();
+    });
+
+    document.addEventListener('click', closeFilterMenu);
+    filterMenu.addEventListener('click', (e) => e.stopPropagation());
+
+    filterMenu.querySelectorAll('.filter-option[data-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        const label = btn.textContent.trim();
+
+        // Auto-expand the grid if collapsed
+        if (shopToggleBtn && !shopToggleBtn.classList.contains('open')) expandShop();
+
+        // Update active state and label
+        filterMenu.querySelectorAll('.filter-option').forEach(o => o.classList.remove('active'));
+        btn.classList.add('active');
+        if (filterLabel) filterLabel.textContent = label;
+        closeFilterMenu();
+
+        // Filter cards
+        productCards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          if (show) {
+            card.style.display = '';
+            requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
+          } else {
+            card.style.opacity = '0'; card.style.transform = 'translateY(20px)';
+            setTimeout(() => { card.style.display = 'none'; }, 400);
+          }
+        });
       });
     });
-  });
+  }
 
   // ============================================
   // CART STATE
@@ -376,7 +883,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (existing) {
       existing.qty++;
     } else {
-      cart.push({ key, name: p.name, price: parsePrice(p.price), image: p.image, personalisation, qty: 1 });
+      cart.push({ key, name: p.name, price: parsePrice(p.price), image: p.images ? p.images[0] : p.image, personalisation, qty: 1 });
     }
     saveCart();
     renderCart();
@@ -392,6 +899,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ============================================
+  // CARD GALLERY
+  // ============================================
+  const initCardGalleries = () => {
+    document.querySelectorAll('.product-card[data-product]').forEach(card => {
+      const key = card.dataset.product;
+      const p = products[key];
+      if (!p || !p.images || p.images.length <= 1) return;
+
+      const imgEl = card.querySelector('.product-image img');
+      const imageDiv = card.querySelector('.product-image');
+      if (!imgEl || !imageDiv) return;
+
+      let currentIdx = 0;
+
+      // Inject nav buttons
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'card-gallery-btn card-gallery-prev';
+      prevBtn.innerHTML = '&#8249;';
+      prevBtn.setAttribute('aria-label', 'Poprzednie zdjęcie');
+
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'card-gallery-btn card-gallery-next';
+      nextBtn.innerHTML = '&#8250;';
+      nextBtn.setAttribute('aria-label', 'Następne zdjęcie');
+
+      // Inject dots
+      const dotsEl = document.createElement('div');
+      dotsEl.className = 'card-gallery-dots';
+      dotsEl.innerHTML = p.images.map((_, i) =>
+        `<span class="card-gallery-dot${i === 0 ? ' active' : ''}" data-idx="${i}"></span>`
+      ).join('');
+
+      imageDiv.appendChild(prevBtn);
+      imageDiv.appendChild(nextBtn);
+      imageDiv.appendChild(dotsEl);
+
+      const goTo = (idx) => {
+        currentIdx = (idx + p.images.length) % p.images.length;
+        imgEl.src = p.images[currentIdx];
+        dotsEl.querySelectorAll('.card-gallery-dot').forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+      };
+
+      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(currentIdx - 1); });
+      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(currentIdx + 1); });
+      dotsEl.addEventListener('click', (e) => {
+        const dot = e.target.closest('.card-gallery-dot');
+        if (dot) { e.stopPropagation(); goTo(parseInt(dot.dataset.idx)); }
+      });
+    });
+  };
+
+  initCardGalleries();
+
   renderCart();
 
   // ============================================
@@ -406,14 +967,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const key = btn.closest('.product-card').dataset.product;
       const p = products[key];
       if (p && modal) {
-        modal.querySelector('.modal-image').src = p.image;
+        const galleryImgs = p.images || [p.image];
+        modal._galleryImages = galleryImgs;
+        modal._galleryIdx = 0;
+        modal.querySelector('.modal-image').src = galleryImgs[0];
         modal.querySelector('.stone-name').textContent = p.name;
         modal.querySelector('.stone-subtitle').textContent = p.subtitle;
         modal.querySelector('.stone-desc').textContent = p.desc;
         modal.querySelector('.modal-price').textContent = p.price;
         modal.querySelector('.modal-add-btn').dataset.product = key;
+        const allegroBtn = modal.querySelector('.modal-allegro-btn');
+        const allegroUrl = allegroUrls[key] || '';
+        allegroBtn.href = allegroUrl;
+        allegroBtn.classList.toggle('visible', !!allegroUrl);
         const propsContainer = modal.querySelector('.modal-properties');
         propsContainer.innerHTML = p.tags.map(t => `<span class="stone-prop-tag">${t}</span>`).join('');
+        // Gallery prev/next visibility
+        const prevBtn = modal.querySelector('.modal-gallery-prev');
+        const nextBtn = modal.querySelector('.modal-gallery-next');
+        const hasMultiple = galleryImgs.length > 1;
+        if (prevBtn) prevBtn.style.display = hasMultiple ? 'flex' : 'none';
+        if (nextBtn) nextBtn.style.display = hasMultiple ? 'flex' : 'none';
+        // Thumbnail strip
+        const thumbsEl = modal.querySelector('.modal-gallery-thumbs');
+        if (thumbsEl) {
+          thumbsEl.innerHTML = galleryImgs.map((src, i) =>
+            `<img class="modal-thumb${i === 0 ? ' active' : ''}" src="${src}" data-idx="${i}" alt="Zdjęcie ${i + 1}" loading="lazy">`
+          ).join('');
+        }
         // Reset personalisation
         const personalisationInput = document.getElementById('modal-personalisation');
         if (personalisationInput) personalisationInput.value = '';
@@ -421,6 +1002,26 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
       }
     });
+  });
+
+  // Modal gallery navigation
+  const modalGalleryPrev = document.querySelector('.modal-gallery-prev');
+  const modalGalleryNext = document.querySelector('.modal-gallery-next');
+  const modalGalleryThumbs = document.querySelector('.modal-gallery-thumbs');
+
+  const modalGoTo = (idx) => {
+    const imgs = modal._galleryImages;
+    if (!imgs) return;
+    modal._galleryIdx = (idx + imgs.length) % imgs.length;
+    modal.querySelector('.modal-image').src = imgs[modal._galleryIdx];
+    modal.querySelectorAll('.modal-thumb').forEach((t, i) => t.classList.toggle('active', i === modal._galleryIdx));
+  };
+
+  if (modalGalleryPrev) modalGalleryPrev.addEventListener('click', () => modalGoTo((modal._galleryIdx || 0) - 1));
+  if (modalGalleryNext) modalGalleryNext.addEventListener('click', () => modalGoTo((modal._galleryIdx || 0) + 1));
+  if (modalGalleryThumbs) modalGalleryThumbs.addEventListener('click', (e) => {
+    const thumb = e.target.closest('.modal-thumb');
+    if (thumb) modalGoTo(parseInt(thumb.dataset.idx));
   });
 
   const closeModal = () => {
@@ -490,7 +1091,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!customerData.fullName || !customerData.email || !customerData.address || !customerData.city || !customerData.postal) return;
     showCheckoutPane('pane-payment');
     renderOrderReview();
-    initPayPal();
   });
 
   const renderOrderReview = () => {
@@ -514,68 +1114,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <strong>${total} zł</strong>
       </div>
     `;
-  };
-
-  const initPayPal = () => {
-    const container = document.getElementById('paypal-button-container');
-    container.innerHTML = '';
-
-    // PayPal not yet configured — show setup instructions
-    if (typeof paypal === 'undefined' || container.closest('[data-paypal-unconfigured]')) {
-      container.innerHTML = `
-        <div class="paypal-setup-msg">
-          <p>Aby aktywować płatności PayPal, wykonaj dwa kroki:</p>
-          <ol>
-            <li>Utwórz konto na <a href="https://www.paypal.com/pl/business" target="_blank">paypal.com/pl/business</a></li>
-            <li>Pobierz swój Client ID na <a href="https://developer.paypal.com" target="_blank">developer.paypal.com</a> i zastąp <code>YOUR_PAYPAL_CLIENT_ID</code> w tagu skryptu PayPal w pliku <code>index.html</code></li>
-          </ol>
-        </div>`;
-      return;
-    }
-
-    paypal.Buttons({
-      createOrder: (data, actions) => {
-        const total = cartTotal();
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: total.toFixed(2),
-              currency_code: 'PLN',
-              breakdown: { item_total: { value: total.toFixed(2), currency_code: 'PLN' } }
-            },
-            items: cart.map(item => ({
-              name: item.personalisation ? `${item.name} (dedyk.: ${item.personalisation.substring(0, 30)})` : item.name,
-              unit_amount: { value: item.price.toFixed(2), currency_code: 'PLN' },
-              quantity: String(item.qty)
-            })),
-            shipping: customerData ? {
-              name: { full_name: customerData.fullName },
-              address: {
-                address_line_1: customerData.address,
-                admin_area_2: customerData.city,
-                postal_code: customerData.postal,
-                country_code: 'PL'
-              }
-            } : undefined
-          }]
-        });
-      },
-      onApprove: (data, actions) => {
-        return actions.order.capture().then(details => {
-          cart = [];
-          saveCart();
-          renderCart();
-          const givenName = details.payer.name.given_name;
-          document.getElementById('checkout-success-msg').textContent =
-            `Dziękujemy, ${givenName}! Potwierdzenie zamówienia zostanie wysłane na adres ${customerData.email}. Realizacja: 1–3 dni robocze.`;
-          showCheckoutPane('pane-success');
-        });
-      },
-      onError: () => {
-        container.insertAdjacentHTML('beforeend', '<p class="paypal-error">Wystąpił błąd płatności. Spróbuj ponownie.</p>');
-      },
-      style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'pay' }
-    }).render('#paypal-button-container');
   };
 
   document.getElementById('checkout-done-btn').addEventListener('click', closeCheckout);
@@ -689,4 +1227,352 @@ document.addEventListener('DOMContentLoaded', () => {
       heroEl.appendChild(p);
     }
   }
+
+  // ============================================
+  //  STONE QUIZ
+  // ============================================
+  const quizIntro     = document.getElementById('quiz-intro');
+  const quizQuestions = document.getElementById('quiz-questions');
+  const quizResult    = document.getElementById('quiz-result');
+  const quizStartBtn  = document.getElementById('quiz-start-btn');
+  const quizRetakeBtn = document.getElementById('quiz-retake-btn');
+  const progressFill  = document.getElementById('quiz-progress-fill');
+  const progressText  = document.getElementById('quiz-progress-text');
+  const questionText  = document.getElementById('quiz-question-text');
+  const optionsEl     = document.getElementById('quiz-options');
+  const quizParticles = document.querySelector('.quiz-particles');
+
+  if (!quizStartBtn) return;
+
+  const QUESTIONS = [
+    {
+      text: 'Jakiego uczucia teraz potrzebujesz?',
+      options: [
+        { icon: '🌿', main: 'Spokoju i harmonii',      sub: 'Wyciszenie, balans, cisza',           cat: 'spokój' },
+        { icon: '🔥', main: 'Siły i pewności siebie',  sub: 'Energia, determinacja, moc',          cat: 'siła' },
+        { icon: '🌀', main: 'Przemiany i odwagi',       sub: 'Zmiany, nowe początki, wzrost',       cat: 'transformacja' },
+        { icon: '✦',  main: 'Intuicji i mądrości',     sub: 'Głębia, wizja, tajemnica',            cat: 'intuicja' },
+        { icon: '💗', main: 'Miłości i ciepła',        sub: 'Bliskość, czułość, połączenie',       cat: 'miłość' },
+        { icon: '💎', main: 'Wyjątkowości',             sub: 'Prestiż, doskonałość, piękno',        cat: 'szlachetne' },
+      ]
+    },
+    {
+      text: 'Który krajobraz przemawia do Twojej duszy?',
+      options: [
+        { icon: '🏔️', main: 'Spokojna tafla jeziora', sub: 'O świcie, mgła, cisza',              cat: 'spokój' },
+        { icon: '⛰️', main: 'Szczyt górski w słońcu',  sub: 'Orzeźwiające powietrze, siła widoku', cat: 'siła' },
+        { icon: '🌋', main: 'Wulkan i dżungla',        sub: 'Żywioły, dzikość, odrodzenie',        cat: 'transformacja' },
+        { icon: '🌌', main: 'Rozgwieżdżone niebo',     sub: 'Bezkres, tajemnica, kosmos',          cat: 'intuicja' },
+        { icon: '🌸', main: 'Kwitnący ogród',           sub: 'Zapach kwiatów, ciepło, piękno',      cat: 'miłość' },
+        { icon: '🪨', main: 'Jaskinia kryształów',      sub: 'Blask, głębia, doskonałość',          cat: 'szlachetne' },
+      ]
+    },
+    {
+      text: 'Co chcesz przyciągnąć do swojego życia?',
+      options: [
+        { icon: '🌙', main: 'Równowagę i spokój',      sub: 'Mniej chaosu, więcej harmonii',       cat: 'spokój' },
+        { icon: '⚡', main: 'Sukces i determinację',    sub: 'Cel, działanie, wytrwałość',          cat: 'siła' },
+        { icon: '🦋', main: 'Odwagę do zmian',         sub: 'Nowy rozdział, świeży start',         cat: 'transformacja' },
+        { icon: '🔭', main: 'Jasność i wnikliwość',    sub: 'Lepsza intuicja, trafne decyzje',     cat: 'intuicja' },
+        { icon: '🤍', main: 'Piękną relację',           sub: 'Miłość, bliskość, zrozumienie',       cat: 'miłość' },
+        { icon: '✨', main: 'Wyjątkowe przeżycia',     sub: 'Coś, co zostaje na zawsze',           cat: 'szlachetne' },
+      ]
+    },
+    {
+      text: 'Zamknij oczy. Wyobraź sobie, że nosisz swoją bransoletkę. Jak się czujesz?',
+      options: [
+        { icon: '😌', main: 'Lekko i spokojnie',       sub: 'Myśli cichną, oddech się wyrównuje',  cat: 'spokój' },
+        { icon: '💪', main: 'Pewnie i silnie',          sub: 'Wiesz, że dasz radę',                 cat: 'siła' },
+        { icon: '🌱', main: 'Gotowo na nowe',           sub: 'Coś ważnego właśnie się zaczyna',     cat: 'transformacja' },
+        { icon: '🌀', main: 'Przenikliwie i wyczulenie', sub: 'Widzisz to, czego inni nie widzą',  cat: 'intuicja' },
+        { icon: '🥰', main: 'Ciepło i z miłością',     sub: 'Serce się otwiera',                   cat: 'miłość' },
+        { icon: '👑', main: 'Olśniewająco',             sub: 'Wiedzą, że jesteś kimś wyjątkowym',   cat: 'szlachetne' },
+      ]
+    },
+  ];
+
+  const RESULTS = {
+    spokój: {
+      name: 'Biały Agat',
+      stone: 'Czysty Spokój',
+      keywords: 'Wyciszenie · Nadzieja · Harmonia',
+      tag: 'Spokój',
+      img: 'images/AGAT_1_1_1.jpg',
+      desc: 'Biały Agat to kamień absolutnego wyciszenia. Koi chaos myśli, przywraca równowagę i otwiera na nowe możliwości. Nosi go ten, kto chce zatrzymać się i odetchnąć pełną piersią.',
+      filter: 'spokój',
+      product: 'agat',
+      glow: 'rgba(245, 240, 232, 0.6)',
+    },
+    siła: {
+      name: 'Lawa i Tygrysie Oko',
+      stone: 'Surowa Energia',
+      keywords: 'Pewność siebie · Motywacja · Żywioły',
+      tag: 'Siła',
+      img: 'images/LAWAITYGRYSIEOKO_6_1_1.jpg',
+      desc: 'Połączenie lawy wulkanicznej i tygrysiego oka to symbol niezłomnej woli. Ten kamień nosi ten, kto zmierza po swoje — zdecydowany, skupiony i pełen ognia.',
+      filter: 'siła',
+      product: 'lawa_tygrysie',
+      glow: 'rgba(184, 100, 40, 0.7)',
+    },
+    transformacja: {
+      name: 'Lawa i Malachit',
+      stone: 'Ogień i Natura',
+      keywords: 'Transformacja · Odwaga · Nowe możliwości',
+      tag: 'Transformacja',
+      img: 'images/LAWAIMALACHIT_7_1_1.jpg',
+      desc: 'Lawa rodzi nową ziemię, malachit ją pokrywa zielenią. Ten kamień towarzyszy tym, którzy są w przełomowym momencie życia — odważnym wystarczy go dotknąć.',
+      filter: 'transformacja',
+      product: 'lawa_malachit',
+      glow: 'rgba(40, 130, 60, 0.6)',
+    },
+    intuicja: {
+      name: 'Labradoryt',
+      stone: 'Kamień Gwiazd',
+      keywords: 'Tajemnica · Ochrona · Intuicja',
+      tag: 'Intuicja',
+      img: 'images/LABRADORYT_4_1_1.jpg',
+      desc: 'Labradoryt mieni się jak zorza polarna — jeden ruch i kryje w sobie całe niebo. To kamień tych, którzy czują więcej, niż widzą, i ufają swojemu wewnętrznemu głosowi.',
+      filter: 'intuicja',
+      product: 'labradoryt',
+      glow: 'rgba(80, 120, 200, 0.6)',
+    },
+    miłość: {
+      name: 'Różowy Kwarc i Onyks',
+      stone: 'Miłość i Ochrona',
+      keywords: 'Miłość · Równowaga · Serce',
+      tag: 'Miłość',
+      img: 'images/ONYKSIROZOWYKWARC_16_1_1.jpg',
+      desc: 'Delikatny różowy kwarc w towarzystwie onyksu — serce otwarte i jednocześnie chronione. Dla tych, którzy miłość traktują poważnie i noszą ją dumnie.',
+      filter: 'miłość',
+      product: 'kwarc_onyks',
+      glow: 'rgba(210, 120, 140, 0.6)',
+    },
+    szlachetne: {
+      name: 'Szmaragd i Kunzyt',
+      stone: 'Serce i Mądrość',
+      keywords: 'Miłość · Mądrość · Intuicja',
+      tag: 'Szlachetny',
+      img: 'images/SZMARAGDIKUNZYT_19_1_1.jpg',
+      desc: 'Prawdziwy szmaragd i kunzyt — dwa kamienie szlachetne zebrane w jedną bransoletkę. Dla wyjątkowych osób, które wiedzą, że noszą coś, co będzie pamiętane.',
+      filter: 'szlachetne',
+      product: 'szmaragd_kunzyt',
+      glow: 'rgba(40, 160, 90, 0.65)',
+    },
+  };
+
+  // Spawn particles
+  const PARTICLE_COLORS = ['rgba(201,169,110,0.7)', 'rgba(245,240,232,0.5)', 'rgba(184,135,61,0.6)', 'rgba(255,255,255,0.3)'];
+  for (let i = 0; i < 28; i++) {
+    const p = document.createElement('div');
+    p.className = 'quiz-particle';
+    const size = 2 + Math.random() * 3;
+    const color = PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)];
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random() * 100}%;
+      top:${20 + Math.random() * 70}%;
+      background:${color};
+      --dur:${7 + Math.random() * 10}s;
+      --delay:${Math.random() * 8}s;
+      --rise:-${80 + Math.random() * 120}px;
+      --op:${0.3 + Math.random() * 0.5};
+    `;
+    quizParticles.appendChild(p);
+  }
+
+  let scores = { spokój: 0, siła: 0, transformacja: 0, intuicja: 0, miłość: 0, szlachetne: 0 };
+  let currentQ = 0;
+
+  function showScreen(id) {
+    [quizIntro, quizQuestions, quizResult].forEach(el => el.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function renderQuestion() {
+    const q = QUESTIONS[currentQ];
+    progressFill.style.width = `${(currentQ / QUESTIONS.length) * 100}%`;
+    progressText.textContent = `Pytanie ${currentQ + 1} z ${QUESTIONS.length}`;
+
+    questionText.textContent = q.text;
+    optionsEl.innerHTML = '';
+
+    // Re-trigger animation
+    const wrap = document.getElementById('quiz-question-wrap');
+    wrap.style.animation = 'none';
+    void wrap.offsetWidth;
+    wrap.style.animation = '';
+
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'quiz-option';
+      btn.innerHTML = `
+        <span class="quiz-option-icon">${opt.icon}</span>
+        <span class="quiz-option-main">${opt.main}</span>
+        <span class="quiz-option-sub">${opt.sub}</span>
+      `;
+      btn.addEventListener('click', () => {
+        optionsEl.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        scores[opt.cat] += 2;
+        setTimeout(() => {
+          currentQ++;
+          if (currentQ < QUESTIONS.length) {
+            renderQuestion();
+          } else {
+            showResult();
+          }
+        }, 420);
+      });
+      optionsEl.appendChild(btn);
+    });
+  }
+
+  function showResult() {
+    progressFill.style.width = '100%';
+    const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+    const r = RESULTS[winner];
+
+    document.getElementById('quiz-result-image').src = r.img;
+    document.getElementById('quiz-result-image').alt = r.name;
+    document.getElementById('quiz-result-energy-tag').textContent = r.tag;
+    document.getElementById('quiz-result-name').textContent = r.name;
+    document.getElementById('quiz-result-stone').textContent = r.stone;
+    document.getElementById('quiz-result-keywords').textContent = r.keywords;
+    document.getElementById('quiz-result-desc').textContent = r.desc;
+    document.getElementById('quiz-result-glow').style.background = `radial-gradient(circle, ${r.glow} 0%, transparent 70%)`;
+
+    const btn = document.getElementById('quiz-result-btn');
+    // Replace btn to remove any previously attached listeners
+    const freshBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(freshBtn, btn);
+    freshBtn.href = '#kolekcja';
+
+    freshBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const card = document.querySelector(`.product-card[data-product="${r.product}"]`);
+      const wrapper = document.getElementById('products-grid-wrapper');
+      const shopToggle = document.getElementById('shop-toggle-btn');
+
+      // Step 1: apply filter so the target card is visible
+      const filterMenu = document.getElementById('filter-dropdown-menu');
+      if (filterMenu) {
+        const opt = filterMenu.querySelector(`[data-filter="${r.filter}"]`);
+        if (opt) opt.click();
+      }
+
+      // Step 2: expand the grid if collapsed, then scroll to the card
+      const scrollToCard = () => {
+        if (!card) return;
+        // Remove any previous highlight
+        document.querySelectorAll('.product-card--quiz-highlight').forEach(el => {
+          el.classList.remove('product-card--quiz-highlight');
+        });
+        card.classList.add('product-card--quiz-highlight');
+        setTimeout(() => card.classList.remove('product-card--quiz-highlight'), 2200);
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      };
+
+      if (shopToggle && !shopToggle.classList.contains('open')) {
+        expandShop();
+        // Wait for the height transition (600ms) before scrolling
+        wrapper.addEventListener('transitionend', scrollToCard, { once: true });
+      } else {
+        scrollToCard();
+      }
+    });
+
+    showScreen('quiz-result');
+  }
+
+  quizStartBtn.addEventListener('click', () => {
+    scores = { spokój: 0, siła: 0, transformacja: 0, intuicja: 0, miłość: 0, szlachetne: 0 };
+    currentQ = 0;
+    showScreen('quiz-questions');
+    renderQuestion();
+  });
+
+  quizRetakeBtn.addEventListener('click', () => {
+    scores = { spokój: 0, siła: 0, transformacja: 0, intuicja: 0, miłość: 0, szlachetne: 0 };
+    currentQ = 0;
+    showScreen('quiz-intro');
+  });
+
+  // ============================================
+  // MOBILE EFFECTS
+  // ============================================
+
+  // --- Scroll Progress Bar ---
+  const progressBar = document.createElement('div');
+  progressBar.id = 'scroll-progress';
+  document.body.prepend(progressBar);
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    progressBar.style.transform = `scaleX(${scrolled})`;
+  }, { passive: true });
+
+  // --- Touch Ripple on Tap ---
+  function createRipple(e) {
+    const touch = e.touches ? e.touches[0] : e;
+    const ripple = document.createElement('span');
+    ripple.className = 'touch-ripple';
+    ripple.style.left = touch.clientX + 'px';
+    ripple.style.top  = touch.clientY + 'px';
+    document.body.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
+  }
+  document.addEventListener('touchstart', createRipple, { passive: true });
+
+  // --- Hero Parallax on Scroll (mobile-friendly, RAF-throttled) ---
+  const heroContent = document.querySelector('.hero-content');
+  const heroSection = document.querySelector('.hero');
+  if (heroContent && heroSection) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrolled = window.scrollY;
+          const heroH = heroSection.offsetHeight;
+          if (scrolled < heroH) {
+            heroContent.style.transform = `translateY(${scrolled * 0.25}px)`;
+            heroContent.style.opacity = 1 - (scrolled / heroH) * 1.2;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  // --- Product Card Scale-In on Mobile ---
+  if (window.innerWidth <= 768) {
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = `${(i % 3) * 60}ms`;
+          entry.target.classList.add('card-visible');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.product-card').forEach(card => cardObserver.observe(card));
+  }
+
+  // --- Section Fade-Slide on Mobile ---
+  if (window.innerWidth <= 768) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-in');
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('section').forEach(s => {
+      s.classList.add('section-mobile');
+      sectionObserver.observe(s);
+    });
+  }
+
 });

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check \"C:\\\\Users\\\\AnnaG\\\\OneDrive\\\\Desktop\\\\Websites\\\\AgereArt\\\\script.js\" 2>&1)"
+    ]
+  }
+}
