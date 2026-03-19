@@ -1298,23 +1298,13 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.textContent = 'Zapisywanie…';
       btn.disabled = true;
 
-      fetch('https://api.brevo.com/v3/contacts', {
+      fetch('https://script.google.com/macros/s/AKfycbwXv5ME9rDgd1w-yMdwJam89O0XJgS50HgYEFeXP_YFExnyXt8Q5s1UA0i8yBPeG8Sd/exec', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'api-key': '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',
-        },
-        body: JSON.stringify({ email, listIds: [3], updateEnabled: true }),
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       })
-      .then(res => {
-        if (res.ok || res.status === 204) {
-          btn.textContent = '✓ Zapisano!';
-          input.value = '';
-        } else {
-          return res.json().then(d => { throw new Error(d.message || res.status); });
-        }
-      })
+      .then(() => { btn.textContent = '✓ Zapisano!'; input.value = ''; })
       .catch(() => { btn.textContent = 'Błąd — spróbuj ponownie'; })
       .finally(() => {
         btn.disabled = false;
