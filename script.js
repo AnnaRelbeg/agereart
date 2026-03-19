@@ -1214,7 +1214,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Bank transfer confirmation
-  document.getElementById('confirm-transfer-btn').addEventListener('click', async () => {
+  document.getElementById('confirm-transfer-btn').addEventListener('click', () => {
     const btn = document.getElementById('confirm-transfer-btn');
     btn.disabled = true;
     btn.querySelector('span').textContent = 'Wysyłanie…';
@@ -1234,18 +1234,32 @@ document.addEventListener('DOMContentLoaded', () => {
       total: cartTotal() + SHIPPING_COST,
     };
 
-    // Submit to Google Sheets via Apps Script Web App
+    // Submit to Google Sheets — fire and forget
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPGofDdwWj3gqBHP96fHKHG5DMxams_AzY7enNjc3JVkRH9erCfysJP3d8M297p2KiSA/exec';
-    try {
-      if (APPS_SCRIPT_URL !== 'REPLACE_WITH_YOUR_APPS_SCRIPT_URL') {
-        await fetch(APPS_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(orderData),
-        });
-      }
-    } catch (_) { /* fail silently — order still shown to user */ }
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(orderData),
+    }).catch(() => {});
+
+    // Email notification via Formspree — fire and forget
+    fetch('https://formspree.io/f/xkoqkaea', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: `Nowe zamówienie ${currentReference} — AgereArt`,
+        Referencja: currentReference,
+        Klient: orderData.name,
+        Email: orderData.email,
+        Telefon: orderData.phone || '—',
+        Adres: `${orderData.address}, ${orderData.postal} ${orderData.city}`,
+        Produkty: orderData.items,
+        'Suma produktów': `${orderData.productTotal} zł`,
+        Wysyłka: `${orderData.shipping} zł`,
+        'Do zapłaty': `${orderData.total} zł`,
+      }),
+    }).catch(() => {});
 
     // Show success
     document.getElementById('checkout-success-msg').textContent =
@@ -1277,11 +1291,35 @@ document.addEventListener('DOMContentLoaded', () => {
     newsletterForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const input = newsletterForm.querySelector('input');
-      if (input.value.trim() && input.value.includes('@')) {
-        const btn = newsletterForm.querySelector('button');
-        btn.textContent = '✓ Zapisano!'; input.value = '';
-        setTimeout(() => btn.textContent = 'Zapisz się', 2500);
-      }
+      const btn = newsletterForm.querySelector('button');
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) return;
+
+      btn.textContent = 'Zapisywanie…';
+      btn.disabled = true;
+
+      fetch('https://api.brevo.com/v3/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'api-key': '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',
+        },
+        body: JSON.stringify({ email, listIds: [3], updateEnabled: true }),
+      })
+      .then(res => {
+        if (res.ok || res.status === 204) {
+          btn.textContent = '✓ Zapisano!';
+          input.value = '';
+        } else {
+          return res.json().then(d => { throw new Error(d.message || res.status); });
+        }
+      })
+      .catch(() => { btn.textContent = 'Błąd — spróbuj ponownie'; })
+      .finally(() => {
+        btn.disabled = false;
+        setTimeout(() => btn.textContent = 'Zapisz się', 3000);
+      });
     });
   }
 
