@@ -858,25 +858,20 @@
     (function () {
       const cur    = document.getElementById('custom-cursor');
       const shadow = document.getElementById('cursor-shadow');
-      const cx = 17, cy = 17, r = 13;
-      const beadColors = ['#5c0a0a','#8b1a1a','#5c0a0a','#8b1a1a','#5c0a0a','#8b1a1a','#5c0a0a'];
-      const beadStrokes = ['#c0392b','#e74c3c','#c0392b','#e74c3c','#c0392b','#e74c3c','#c0392b'];
-      const beads = Array.from({ length: 7 }, (_, i) => {
-        const angle = (i * 2 * Math.PI) / 7 - Math.PI / 2;
-        const x = (cx + r * Math.cos(angle)).toFixed(2);
-        const y = (cy + r * Math.sin(angle)).toFixed(2);
-        return `<circle cx="${x}" cy="${y}" r="2.8" fill="${beadColors[i]}" stroke="${beadStrokes[i]}" stroke-width="0.8"/>`;
-      }).join('');
-
-      cur.innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#8b1a1a" stroke-width="1.5" opacity="0.6"/>
-        ${beads}
-      </svg>`;
 
       let mx = -100, my = -100;
       let sx = -100, sy = -100;
 
-      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX;
+        my = e.clientY;
+
+        // Detect if cursor is over a dark section
+        const el = document.elementFromPoint(mx, my);
+        const onDark = !!el && !!el.closest('.section--dark');
+        cur.classList.toggle('is-dark', onDark);
+        shadow.classList.toggle('is-dark', onDark);
+      });
 
       const clickables = 'a, button, [role="button"], label, select, input, textarea, [tabindex]';
       document.querySelectorAll(clickables).forEach(el => {
@@ -888,7 +883,6 @@
         cur.style.left = mx + 'px';
         cur.style.top  = my + 'px';
 
-        // Shadow lerps toward cursor — slower = more fluid drift
         sx += (mx - sx) * 0.05;
         sy += (my - sy) * 0.05;
         shadow.style.left = sx + 'px';
