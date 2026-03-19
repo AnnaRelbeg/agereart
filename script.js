@@ -636,6 +636,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- About Slideshow ---
+  (() => {
+    const container = document.getElementById('about-slideshow');
+    const progressBar = document.getElementById('slideshow-progress-bar');
+    if (!container) return;
+
+    const INTERVAL = 3500;
+    const images = Object.values(products).map(p => ({ src: p.image, alt: p.name }));
+
+    images.forEach((img, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'about-slide' + (i === 0 ? ' active' : '');
+      slide.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="${i === 0 ? 'eager' : 'lazy'}">`;
+      container.appendChild(slide);
+    });
+
+    const slides = container.querySelectorAll('.about-slide');
+    let current = 0;
+    let progressStart = null;
+    let rafId = null;
+
+    const animateProgress = (timestamp) => {
+      if (!progressStart) progressStart = timestamp;
+      const elapsed = timestamp - progressStart;
+      progressBar.style.width = Math.min((elapsed / INTERVAL) * 100, 100) + '%';
+      if (elapsed < INTERVAL) {
+        rafId = requestAnimationFrame(animateProgress);
+      }
+    };
+
+    const goTo = (index) => {
+      slides[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      progressBar.style.transition = 'none';
+      progressBar.style.width = '0%';
+      progressStart = null;
+      cancelAnimationFrame(rafId);
+      requestAnimationFrame(animateProgress);
+    };
+
+    requestAnimationFrame(animateProgress);
+    setInterval(() => goTo(current + 1), INTERVAL);
+  })();
+
   // --- Scroll Reveal ---
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -778,10 +823,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartPanelFooter = document.getElementById('cart-panel-footer');
   const cartPanelCount = document.getElementById('cart-panel-count');
   const cartSubtotal = document.getElementById('cart-subtotal');
-  const cartShippingFill = document.getElementById('cart-shipping-fill');
-  const cartShippingText = document.getElementById('cart-shipping-text');
-
-  const FREE_SHIPPING_AT = 150;
 
   const openCartDrawer = () => {
     cartDrawer.classList.add('open');
@@ -861,17 +902,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Totals
     cartSubtotal.textContent = `${total} zł`;
 
-    // Shipping progress bar
-    const remaining = FREE_SHIPPING_AT - total;
-    const progress = Math.min((total / FREE_SHIPPING_AT) * 100, 100);
-    cartShippingFill.style.width = `${progress}%`;
-    if (remaining > 0) {
-      cartShippingText.textContent = `Brakuje ${remaining} zł do darmowej wysyłki`;
-      cartShippingText.style.color = '';
-    } else {
-      cartShippingText.textContent = 'Masz darmową wysyłkę!';
-      cartShippingText.style.color = 'var(--color-gold)';
-    }
   };
 
   const addToCart = (key) => {
@@ -1095,7 +1125,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const renderOrderReview = () => {
     const total = cartTotal();
-    const freeShipping = total >= FREE_SHIPPING_AT;
     document.getElementById('checkout-order-review').innerHTML = `
       <div class="order-review-items">
         ${cart.map(item => `
@@ -1110,7 +1139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('')}
       </div>
       <div class="order-review-total">
-        <span>Łącznie${freeShipping ? ' (darmowa wysyłka)' : ''}</span>
+        <span>Łącznie</span>
         <strong>${total} zł</strong>
       </div>
     `;
@@ -1119,20 +1148,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('checkout-done-btn').addEventListener('click', closeCheckout);
 
   // ============================================
-  // CONTACT FORM
+  // CONTACT FORM — native Formspree submission
   // ============================================
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(contactForm).entries());
-      if (!data.name || !data.email || !data.message) { alert('Proszę wypełnić wszystkie wymagane pola.'); return; }
-      const submitBtn = contactForm.querySelector('.form-submit');
-      const orig = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span>Wysyłanie...</span>'; submitBtn.disabled = true;
-      setTimeout(() => { submitBtn.innerHTML = '<span>✓ Wysłano!</span>'; contactForm.reset(); setTimeout(() => { submitBtn.innerHTML = orig; submitBtn.disabled = false; }, 2500); }, 1500);
-    });
-  }
 
   // ============================================
   // NEWSLETTER FORM

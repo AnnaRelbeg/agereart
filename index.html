@@ -46,8 +46,8 @@
         </a>
         <a href="#quiz" class="hero-quiz-cta">
           <span class="hero-quiz-cta-ornament">✦</span>
-          <span>Odkryj bransoletkę stworzoną specjalnie dla Twojej energii</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span>Zrób quiz i znajdź swoją bransoletkę</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
@@ -59,7 +59,8 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image-wrapper reveal">
-          <img src="images/ONYKSIROZOWYKWARC_16_1_1.jpg" alt="Bransoletka Różowy Kwarc i Onyks w eleganckim pudełku" loading="lazy">
+          <div class="about-slideshow" id="about-slideshow"></div>
+          <div class="slideshow-progress"><div class="slideshow-progress-bar" id="slideshow-progress-bar"></div></div>
           <div class="about-image-frame"></div>
         </div>
         <div class="about-content">
@@ -92,7 +93,7 @@
             <li>✦ Złota karta z właściwościami kamienia</li>
             <li>✦ Personalizowana dedykacja na karcie</li>
             <li>✦ Gotowe do wręczenia — bez dodatkowego pakowania</li>
-            <li>✦ Darmowa dostawa od 150 zł</li>
+            <li>✦ Bezpieczna dostawa na terenie całej Polski</li>
           </ul>
           <a href="#kolekcja" class="section-cta-btn">
             <span>Wybierz prezent</span>
@@ -540,7 +541,7 @@
           <div class="gift-features reveal reveal-delay-3">
             <div class="gift-feature"><div class="gift-feature-icon">✦</div><div class="gift-feature-text"><h4>Eleganckie opakowanie</h4><p>Czarne pudełko ze złotą kartą i satynową czerwoną wstążką — gotowe do wręczenia.</p></div></div>
             <div class="gift-feature"><div class="gift-feature-icon">✦</div><div class="gift-feature-text"><h4>Karta z opisem kamienia</h4><p>Każda bransoletka zawiera kartę z właściwościami energetycznymi minerału.</p></div></div>
-            <div class="gift-feature"><div class="gift-feature-icon">✦</div><div class="gift-feature-text"><h4>Darmowa wysyłka od 150 zł</h4><p>Bezpieczna dostawa kurierem lub do paczkomatu na terenie całej Polski.</p></div></div>
+            <div class="gift-feature"><div class="gift-feature-icon">✦</div><div class="gift-feature-text"><h4>Bezpieczna dostawa</h4><p>Wysyłka kurierem lub do paczkomatu na terenie całej Polski.</p></div></div>
           </div>
           <a href="#kolekcja" class="section-cta-btn reveal reveal-delay-4" style="margin-top: 32px; display: inline-flex;">
             <span>Wybierz prezent dla bliskiej osoby</span>
@@ -582,7 +583,7 @@
       <div class="mid-cta-inner reveal">
         <div class="mid-cta-text">
           <h2 class="mid-cta-heading">Zamów dziś, <em>otrzymaj w 1–3 dni</em></h2>
-          <p class="mid-cta-sub">Darmowa dostawa od 150 zł. Eleganckie opakowanie gotowe do wręczenia — bez dodatkowego pakowania.</p>
+          <p class="mid-cta-sub">Eleganckie opakowanie gotowe do wręczenia — bez dodatkowego pakowania.</p>
         </div>
         <a href="#kolekcja" class="section-cta-btn section-cta-btn--dark">
           <span>Przejdź do sklepu</span>
@@ -664,7 +665,7 @@
             <div class="contact-detail"><div class="contact-detail-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="contact-detail-text"><strong>Czas realizacji</strong>1–3 dni robocze</div></div>
           </div>
         </div>
-        <form class="contact-form reveal" id="contact-form">
+        <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/xkoqkaea" method="POST">
           <div class="form-row"><div class="form-group"><label for="name">Imię *</label><input type="text" id="name" name="name" placeholder="Twoje imię" required></div><div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="twoj@email.pl" required></div></div>
           <div class="form-group"><label for="subject">Temat</label><select id="subject" name="subject"><option value="">Wybierz temat...</option><option value="zamówienie">Pytanie o zamówienie</option><option value="dobór">Pomoc w doborze kamienia</option><option value="indywidualny">Projekt indywidualny</option><option value="współpraca">Współpraca</option><option value="inne">Inne</option></select></div>
           <div class="form-group"><label for="message">Wiadomość *</label><textarea id="message" name="message" placeholder="Napisz swoją wiadomość..." required></textarea></div>
@@ -739,14 +740,14 @@
         <div class="cart-items-list" id="cart-items-list"></div>
       </div>
       <div class="cart-panel-footer" id="cart-panel-footer">
-        <div class="cart-shipping-bar">
-          <div class="cart-shipping-text" id="cart-shipping-text">Darmowa wysyłka od 150 zł</div>
-          <div class="cart-shipping-track"><div class="cart-shipping-fill" id="cart-shipping-fill"></div></div>
-        </div>
         <div class="cart-totals">
           <div class="cart-total-row"><span>Razem</span><span class="cart-subtotal-amount" id="cart-subtotal">0 zł</span></div>
           <div class="cart-total-row cart-shipping-row"><span>Wysyłka</span><span id="cart-shipping-cost">obliczana przy kasie</span></div>
         </div>
+        <p class="prepayment-notice">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Zamówienia realizowane wyłącznie po wpłacie z góry.
+        </p>
         <button class="cart-checkout-btn" id="cart-checkout-btn">
           <span>Przejdź do kasy</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -819,6 +820,10 @@
         <div class="checkout-pane" id="pane-payment">
           <div class="checkout-order-review" id="checkout-order-review"></div>
           <div class="checkout-payment-section">
+            <p class="prepayment-notice prepayment-notice--checkout">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Zamówienia realizowane są wyłącznie po wcześniejszej wpłacie. Kliknij poniżej, aby sfinalizować zakup przez Allegro.
+            </p>
             <a href="https://allegro.pl/uzytkownik/Geblon" target="_blank" rel="noopener" class="allegro-btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               Kup na Allegro.pl
@@ -854,8 +859,8 @@
       const cur    = document.getElementById('custom-cursor');
       const shadow = document.getElementById('cursor-shadow');
       const cx = 17, cy = 17, r = 13;
-      const beadColors = ['#0d0d0d','#1e1e1e','#0d0d0d','#1e1e1e','#0d0d0d','#1e1e1e','#0d0d0d'];
-      const beadStrokes = ['#888888','#bbbbbb','#888888','#bbbbbb','#888888','#bbbbbb','#888888'];
+      const beadColors = ['#5c0a0a','#8b1a1a','#5c0a0a','#8b1a1a','#5c0a0a','#8b1a1a','#5c0a0a'];
+      const beadStrokes = ['#c0392b','#e74c3c','#c0392b','#e74c3c','#c0392b','#e74c3c','#c0392b'];
       const beads = Array.from({ length: 7 }, (_, i) => {
         const angle = (i * 2 * Math.PI) / 7 - Math.PI / 2;
         const x = (cx + r * Math.cos(angle)).toFixed(2);
@@ -864,7 +869,7 @@
       }).join('');
 
       cur.innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#555555" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#8b1a1a" stroke-width="1.5" opacity="0.6"/>
         ${beads}
       </svg>`;
 
