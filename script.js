@@ -739,62 +739,85 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Shop Filter Dropdown ---
-  const filterTrigger = document.getElementById('filter-dropdown-trigger');
-  const filterMenu = document.getElementById('filter-dropdown-menu');
-  const filterLabel = document.querySelector('.filter-dropdown-label');
+  // --- Shop Filter Pills ---
   const productCards = document.querySelectorAll('.product-card');
 
-  if (filterTrigger && filterMenu) {
-    const openFilterMenu = () => {
-      filterTrigger.classList.add('open');
-      filterTrigger.setAttribute('aria-expanded', 'true');
-      filterMenu.classList.add('open');
-    };
+  // ============================================
+  // STONE MAP — which products contain each stone
+  // ============================================
+  const STONE_MAP = {
+    agat:       ['agat','agat_lawa','agat_lawa_2','agat_lawa_3','labradoryt_agat','labradoryt_agat_2','onyks_agat_fioletowy'],
+    lawa:       ['agat_lawa','agat_lawa_2','agat_lawa_3','lawa','lawa_2','lawa_tygrysie','lawa_tygrysie_2','lawa_tygrysie_3','lawa_malachit'],
+    labradoryt: ['labradoryt','labradoryt_agat','labradoryt_agat_2','onyks_labradoryt'],
+    onyks:      ['onyks_fasetowany','onyks_matowy','onyks_3','onyks_4','onyks_krysztal','onyks_krysztal_2','onyks_krysztal_3','onyks_agat_fioletowy','onyks_jaspis','onyks_labradoryt','onyks_malachit','onyks_malachit_2','onyks_malachit_3','onyks_malachit_4','onyks_malachit_5','onyks_malachit_6','onyks_malachit_7','onyks_malachit_8','onyks_malachit_9','onyks_malachit_10','onyks_tygrysie','onyks_tygrysie2','onyks_tygrysie3','onyks_tygrysie4','onyks_tygrysie5','onyks_tygrysie6','onyks_tygrysie7','onyks_tygrysie8','onyks_tygrysie9','onyks_tygrysie10','onyks_piasek','onyks_piasek_2','kwarc_onyks','kwarc_onyks_2','kwarc_onyks_3','onyks_krysztal_cytryn'],
+    tygrysie:   ['lawa_tygrysie','lawa_tygrysie_2','lawa_tygrysie_3','onyks_tygrysie','onyks_tygrysie2','onyks_tygrysie3','onyks_tygrysie4','onyks_tygrysie5','onyks_tygrysie6','onyks_tygrysie7','onyks_tygrysie8','onyks_tygrysie9','onyks_tygrysie10'],
+    malachit:   ['lawa_malachit','onyks_malachit','onyks_malachit_2','onyks_malachit_3','onyks_malachit_4','onyks_malachit_5','onyks_malachit_6','onyks_malachit_7','onyks_malachit_8','onyks_malachit_9','onyks_malachit_10'],
+    kwarc:      ['kwarc_onyks','kwarc_onyks_2','kwarc_onyks_3','turmalin_rozowy_kwarc'],
+    krysztal:   ['onyks_krysztal','onyks_krysztal_2','onyks_krysztal_3','onyks_krysztal_cytryn'],
+    cytryn:     ['onyks_krysztal_cytryn'],
+    szmaragd:   ['szmaragd_kunzyt'],
+    szafir:     ['szafir_kyanit'],
+    kyanit:     ['szafir_kyanit','kyanit_rubin'],
+    turmalin:   ['turmalin_rozowy_kwarc','turmalin_kunzyt','turmalin_rubin','turmalin_rubin_2'],
+    rubin:      ['rubin_kunzyt','turmalin_rubin','turmalin_rubin_2','kyanit_rubin'],
+    kunzyt:     ['szmaragd_kunzyt','turmalin_kunzyt','rubin_kunzyt'],
+    jaspis:     ['onyks_jaspis'],
+  };
 
-    const closeFilterMenu = () => {
-      filterTrigger.classList.remove('open');
-      filterTrigger.setAttribute('aria-expanded', 'false');
-      filterMenu.classList.remove('open');
-    };
+  let activeEnergyFilter = 'all';
+  let activeStoneFilter  = 'all';
 
-    filterTrigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      filterTrigger.classList.contains('open') ? closeFilterMenu() : openFilterMenu();
-    });
-
-    document.addEventListener('click', closeFilterMenu);
-    filterMenu.addEventListener('click', (e) => e.stopPropagation());
-
-    filterMenu.querySelectorAll('.filter-option[data-filter]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        const label = btn.textContent.trim();
-
-        // Auto-expand the grid if collapsed
-        if (shopToggleBtn && !shopToggleBtn.classList.contains('open')) expandShop();
-
-        // Update active state and label
-        filterMenu.querySelectorAll('.filter-option').forEach(o => o.classList.remove('active'));
-        btn.classList.add('active');
-        if (filterLabel) filterLabel.textContent = label;
-        closeFilterMenu();
-
-        // Filter cards
-        productCards.forEach(card => {
-          const show = filter === 'all' || card.dataset.category === filter;
-          card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-          if (show) {
-            card.style.display = '';
-            requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
-          } else {
-            card.style.opacity = '0'; card.style.transform = 'translateY(20px)';
-            setTimeout(() => { card.style.display = 'none'; }, 400);
-          }
-        });
-      });
+  function applyFilters() {
+    productCards.forEach(card => {
+      const matchEnergy = activeEnergyFilter === 'all' || card.dataset.category === activeEnergyFilter;
+      const matchStone  = activeStoneFilter === 'all' || (STONE_MAP[activeStoneFilter] || []).includes(card.dataset.product);
+      const show = matchEnergy && matchStone;
+      card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      if (show) {
+        card.style.display = '';
+        requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
+      } else {
+        card.style.opacity = '0'; card.style.transform = 'translateY(20px)';
+        setTimeout(() => { if (card.style.opacity === '0') card.style.display = 'none'; }, 400);
+      }
     });
   }
+
+  window.applyEnergyFilter = function(value) {
+    activeEnergyFilter = value;
+    document.querySelectorAll('#energy-filter-pills .filter-pill').forEach(p => {
+      p.classList.toggle('active', p.dataset.energy === value);
+    });
+    if (shopToggleBtn && !shopToggleBtn.classList.contains('open')) expandShop();
+    applyFilters();
+  };
+
+  window.applyStoneFilter = function(value) {
+    activeStoneFilter = value;
+    document.querySelectorAll('#stone-filter-pills .filter-pill').forEach(p => {
+      p.classList.toggle('active', p.dataset.stone === value);
+    });
+    if (shopToggleBtn && !shopToggleBtn.classList.contains('open')) expandShop();
+    applyFilters();
+  };
+
+  document.querySelectorAll('#energy-filter-pills .filter-pill').forEach(btn => {
+    btn.addEventListener('click', () => window.applyEnergyFilter(btn.dataset.energy));
+  });
+
+  document.querySelectorAll('#stone-filter-pills .filter-pill').forEach(btn => {
+    btn.addEventListener('click', () => window.applyStoneFilter(btn.dataset.stone));
+  });
+
+  // ============================================
+  // ENERGY GUIDE → COLLECTION FILTER LINKS
+  // ============================================
+  document.querySelectorAll('.energy-card--link[data-stone]').forEach(card => {
+    card.addEventListener('click', () => {
+      window.applyStoneFilter(card.dataset.stone);
+      document.getElementById('kolekcja')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 
   // ============================================
   // CART STATE
@@ -1114,17 +1137,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('checkout-back-btn').addEventListener('click', () => showCheckoutPane('pane-details'));
 
+  // Payment method switching
+  document.querySelectorAll('.payment-method-card').forEach(card => {
+    card.addEventListener('click', () => {
+      selectedPaymentMethod = card.dataset.method;
+      document.querySelectorAll('.payment-method-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      document.querySelectorAll('.payment-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(`panel-${selectedPaymentMethod}`).classList.add('active');
+
+      if (selectedPaymentMethod === 'transfer') {
+        renderOrderReview(true);
+        const total = cartTotal() + SHIPPING_COST;
+        document.getElementById('transfer-total').textContent = `${total} zł`;
+        document.getElementById('transfer-reference').textContent = currentReference;
+      } else {
+        renderOrderReview(false);
+      }
+    });
+  });
+
   checkoutForm.addEventListener('submit', e => {
     e.preventDefault();
     const data = new FormData(checkoutForm);
     customerData = Object.fromEntries(data.entries());
     if (!customerData.fullName || !customerData.email || !customerData.address || !customerData.city || !customerData.postal) return;
+    currentReference = generateReference();
+    selectedPaymentMethod = 'allegro';
+    document.querySelectorAll('.payment-method-card').forEach(c => c.classList.remove('active'));
+    document.querySelector('.payment-method-card[data-method="allegro"]').classList.add('active');
+    document.querySelectorAll('.payment-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-allegro').classList.add('active');
     showCheckoutPane('pane-payment');
-    renderOrderReview();
+    renderOrderReview(false);
   });
 
-  const renderOrderReview = () => {
-    const total = cartTotal();
+  const SHIPPING_COST = 12;
+
+  const generateReference = () => {
+    const year = new Date().getFullYear();
+    const rand = Math.floor(1000 + Math.random() * 9000);
+    return `AA-${year}-${rand}`;
+  };
+
+  let currentReference = '';
+  let selectedPaymentMethod = 'allegro';
+
+  const renderOrderReview = (includeShipping = false) => {
+    const productTotal = cartTotal();
+    const total = includeShipping ? productTotal + SHIPPING_COST : productTotal;
     document.getElementById('checkout-order-review').innerHTML = `
       <div class="order-review-items">
         ${cart.map(item => `
@@ -1137,6 +1198,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>${item.price * item.qty} zł</span>
           </div>
         `).join('')}
+        ${includeShipping ? `
+          <div class="order-review-item">
+            <div style="width:40px;height:40px;flex-shrink:0;"></div>
+            <div><span>Wysyłka</span><small>Kurier / Paczkomat</small></div>
+            <span>${SHIPPING_COST} zł</span>
+          </div>
+        ` : ''}
       </div>
       <div class="order-review-total">
         <span>Łącznie</span>
@@ -1144,6 +1212,56 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
   };
+
+  // Bank transfer confirmation
+  document.getElementById('confirm-transfer-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('confirm-transfer-btn');
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'Wysyłanie…';
+
+    const orderData = {
+      reference: currentReference,
+      timestamp: new Date().toISOString(),
+      name: customerData.fullName,
+      email: customerData.email,
+      phone: customerData.phone || '',
+      address: customerData.address,
+      city: customerData.city,
+      postal: customerData.postal,
+      items: cart.map(i => `${i.name} x${i.qty}`).join(', '),
+      productTotal: cartTotal(),
+      shipping: SHIPPING_COST,
+      total: cartTotal() + SHIPPING_COST,
+    };
+
+    // Submit to Google Sheets via Apps Script Web App
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPGofDdwWj3gqBHP96fHKHG5DMxams_AzY7enNjc3JVkRH9erCfysJP3d8M297p2KiSA/exec';
+    try {
+      if (APPS_SCRIPT_URL !== 'REPLACE_WITH_YOUR_APPS_SCRIPT_URL') {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(orderData),
+        });
+      }
+    } catch (_) { /* fail silently — order still shown to user */ }
+
+    // Show success
+    document.getElementById('checkout-success-msg').textContent =
+      `Dziękujemy, ${customerData.fullName.split(' ')[0]}! Twój numer referencyjny to ${currentReference}. Prosimy o dokonanie przelewu — po zaksięgowaniu wysyłamy w 1–2 dni robocze.`;
+    document.getElementById('success-transfer-details').style.display = 'block';
+    document.getElementById('success-reference').textContent = currentReference;
+    document.getElementById('success-amount').textContent = `${cartTotal() + SHIPPING_COST} zł`;
+
+    cart = [];
+    saveCart();
+    updateCartUI();
+    showCheckoutPane('pane-success');
+
+    btn.disabled = false;
+    btn.querySelector('span').textContent = 'Potwierdzam zamówienie';
+  });
 
   document.getElementById('checkout-done-btn').addEventListener('click', closeCheckout);
 
@@ -1473,11 +1591,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const shopToggle = document.getElementById('shop-toggle-btn');
 
       // Step 1: apply filter so the target card is visible
-      const filterMenu = document.getElementById('filter-dropdown-menu');
-      if (filterMenu) {
-        const opt = filterMenu.querySelector(`[data-filter="${r.filter}"]`);
-        if (opt) opt.click();
-      }
+      window.applyEnergyFilter(r.filter);
 
       // Step 2: expand the grid if collapsed, then scroll to the card
       const scrollToCard = () => {
