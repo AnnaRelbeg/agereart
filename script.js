@@ -1592,16 +1592,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const wrapper = document.getElementById('products-grid-wrapper');
       const shopToggle = document.getElementById('shop-toggle-btn');
 
-      // Step 1: apply filter so the target card is visible
-      window.applyEnergyFilter(r.filter);
+      // Reset both filters so the target card is guaranteed visible
+      window.applyEnergyFilter('all');
+      window.applyStoneFilter('all');
 
-      // Step 2: expand the grid if collapsed, then scroll to the card
       const scrollToCard = () => {
         if (!card) return;
-        // Remove any previous highlight
         document.querySelectorAll('.product-card--quiz-highlight').forEach(el => {
           el.classList.remove('product-card--quiz-highlight');
         });
+        card.style.display = '';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
         card.classList.add('product-card--quiz-highlight');
         setTimeout(() => card.classList.remove('product-card--quiz-highlight'), 2200);
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1609,10 +1611,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (shopToggle && !shopToggle.classList.contains('open')) {
         expandShop();
-        // Wait for the height transition (600ms) before scrolling
         wrapper.addEventListener('transitionend', scrollToCard, { once: true });
       } else {
-        scrollToCard();
+        // Wait for filter animation to clear before scrolling
+        setTimeout(scrollToCard, 450);
       }
     });
 
