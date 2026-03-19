@@ -1286,32 +1286,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   // NEWSLETTER FORM
   // ============================================
-  const newsletterForm = document.querySelector('.newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const input = newsletterForm.querySelector('input');
-      const btn = newsletterForm.querySelector('button');
-      const email = input.value.trim();
-      if (!email || !email.includes('@')) return;
-
-      btn.textContent = 'Zapisywanie…';
-      btn.disabled = true;
-
-      fetch('https://script.google.com/macros/s/AKfycbwXv5ME9rDgd1w-yMdwJam89O0XJgS50HgYEFeXP_YFExnyXt8Q5s1UA0i8yBPeG8Sd/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      })
-      .then(() => { btn.textContent = '✓ Zapisano!'; input.value = ''; })
-      .catch(() => { btn.textContent = 'Błąd — spróbuj ponownie'; })
-      .finally(() => {
-        btn.disabled = false;
-        setTimeout(() => btn.textContent = 'Zapisz się', 3000);
-      });
-    });
-  }
 
   // --- Parallax Hero ---
   const heroBg = document.querySelector('.hero-bg');
