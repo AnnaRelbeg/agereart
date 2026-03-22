@@ -550,10 +550,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Allegro URLs per product ---
   const allegroUrls = {
-    agat:                   '',
+    agat:                   'https://allegro.pl/oferta/bransoletka-z-kamieni-naturalnych-idealna-na-prezent-18395473145',
     agat_lawa:              '',
     agat_lawa_2:            '',
-    agat_lawa_3:            '',
+    agat_lawa_3:            'https://allegro.pl/produkt/bransoletka-z-agatu-i-lawy-elegancja-z-charakterem-8687219e-f9af-4de5-8cc6-940c5e2e45d0?offerId=18357201981',
     labradoryt:             '',
     labradoryt_agat:        '',
     labradoryt_agat_2:      '',
@@ -607,9 +607,9 @@ document.addEventListener('DOMContentLoaded', () => {
     szafir_kyanit:          '',
     turmalin_kunzyt:        '',
     rubin_kunzyt:           '',
-    turmalin_rubin:         '',
+    turmalin_rubin:         'https://allegro.pl/produkt/bransoletka-z-kamieni-szlachetnych-i-naturalnych-idealna-na-prezent-8f67147f-7207-4ea1-8427-1ae9a049be1b?offerId=18418861361',
     turmalin_rubin_2:       '',
-    kyanit_rubin:           '',
+    kyanit_rubin:           'https://allegro.pl/produkt/bransoletka-z-kamieni-szlachetnych-idealna-na-prezent-6cd66526-5b64-4023-82d6-beff713f8680?offerId=18419364344',
   };
 
   // --- Header Scroll Effect ---
