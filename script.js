@@ -819,138 +819,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ============================================
-  // CART STATE
-  // ============================================
-  const CART_KEY = 'agereartCart';
-  let cart = [];
-  let customerData = null;
-
-  const loadCart = () => {
-    try { cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]'); } catch { cart = []; }
-  };
-  const saveCart = () => localStorage.setItem(CART_KEY, JSON.stringify(cart));
-  const cartTotal = () => cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-  const cartItemCount = () => cart.reduce((sum, i) => sum + i.qty, 0);
-  const parsePrice = (priceStr) => parseInt(priceStr);
-
-  loadCart();
-
-  // ============================================
-  // CART DRAWER
-  // ============================================
-  const cartDrawer = document.getElementById('cart-drawer');
-  const cartBadge = document.getElementById('cart-badge');
-  const cartItemsList = document.getElementById('cart-items-list');
-  const cartEmptyState = document.getElementById('cart-empty-state');
-  const cartPanelFooter = document.getElementById('cart-panel-footer');
-  const cartPanelCount = document.getElementById('cart-panel-count');
-  const cartSubtotal = document.getElementById('cart-subtotal');
-
-  const openCartDrawer = () => {
-    cartDrawer.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  };
-  const closeCartDrawer = () => {
-    cartDrawer.classList.remove('open');
-    document.body.style.overflow = '';
-  };
-
-  document.getElementById('cart-icon-btn').addEventListener('click', openCartDrawer);
-  document.getElementById('cart-panel-close').addEventListener('click', closeCartDrawer);
-  document.getElementById('cart-backdrop').addEventListener('click', closeCartDrawer);
-
-  const renderCart = () => {
-    const count = cartItemCount();
-    const total = cartTotal();
-    const isEmpty = cart.length === 0;
-
-    // Badge
-    cartBadge.textContent = count > 0 ? count : '';
-    cartBadge.classList.toggle('visible', count > 0);
-
-    // Empty / items state
-    cartEmptyState.style.display = isEmpty ? 'flex' : 'none';
-    cartPanelFooter.style.display = isEmpty ? 'none' : 'flex';
-    cartPanelCount.textContent = count > 0 ? `(${count})` : '';
-
-    // Render items
-    cartItemsList.innerHTML = cart.map(item => `
-      <div class="cart-item" data-key="${item.key}">
-        <img src="${item.image}" alt="${item.name}" class="cart-item-img" loading="lazy">
-        <div class="cart-item-info">
-          <div class="cart-item-name">${item.name}</div>
-          <div class="cart-item-size">25 cm (regulowana)</div>
-          ${item.personalisation ? `<div class="cart-item-personalisation">✦ ${item.personalisation}</div>` : ''}
-          <div class="cart-item-price">${item.price * item.qty} zł</div>
-        </div>
-        <div class="cart-item-controls">
-          <button class="qty-btn" data-action="dec" aria-label="Zmniejsz ilość">−</button>
-          <span class="qty-value">${item.qty}</span>
-          <button class="qty-btn" data-action="inc" aria-label="Zwiększ ilość">+</button>
-        </div>
-        <button class="cart-item-remove" aria-label="Usuń produkt">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-    `).join('');
-
-    // Qty controls
-    cartItemsList.querySelectorAll('.qty-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const { key } = btn.closest('.cart-item').dataset;
-        const item = cart.find(i => i.key === key);
-        if (!item) return;
-        if (btn.dataset.action === 'inc') {
-          item.qty++;
-        } else {
-          item.qty--;
-          if (item.qty <= 0) cart = cart.filter(i => i.key !== key);
-        }
-        saveCart();
-        renderCart();
-      });
-    });
-
-    // Remove buttons
-    cartItemsList.querySelectorAll('.cart-item-remove').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const { key } = btn.closest('.cart-item').dataset;
-        cart = cart.filter(i => i.key !== key);
-        saveCart();
-        renderCart();
-      });
-    });
-
-    // Totals
-    cartSubtotal.textContent = `${total} zł`;
-
-  };
-
-  const addToCart = (key) => {
-    const p = products[key];
-    if (!p) return;
-    const personalisationInput = document.getElementById('modal-personalisation');
-    const personalisation = personalisationInput ? personalisationInput.value.trim() : '';
-    const existing = cart.find(i => i.key === key);
-    if (existing) {
-      existing.qty++;
-    } else {
-      cart.push({ key, name: p.name, price: parsePrice(p.price), image: p.images ? p.images[0] : p.image, personalisation, qty: 1 });
-    }
-    saveCart();
-    renderCart();
-    openCartDrawer();
-  };
-
-  // Clicking the add-to-cart button on a card opens the quick-view (for size selection)
-  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.product-card');
-      const quickViewBtn = card.querySelector('.product-quick-view');
-      if (quickViewBtn) quickViewBtn.click();
-    });
-  });
 
   // ============================================
   // CARD GALLERY
@@ -1006,8 +874,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initCardGalleries();
 
-  renderCart();
-
   // ============================================
   // MODAL / QUICK VIEW
   // ============================================
@@ -1025,10 +891,10 @@ document.addEventListener('DOMContentLoaded', () => {
         modal._galleryIdx = 0;
         modal.querySelector('.modal-image').src = galleryImgs[0];
         modal.querySelector('.stone-name').textContent = p.name;
+        if (modalOrderBtn) modalOrderBtn.dataset.product = key;
         modal.querySelector('.stone-subtitle').textContent = p.subtitle;
         modal.querySelector('.stone-desc').textContent = p.desc;
         modal.querySelector('.modal-price').textContent = p.price;
-        modal.querySelector('.modal-add-btn').dataset.product = key;
         const allegroBtn = modal.querySelector('.modal-allegro-btn');
         const allegroUrl = allegroUrls[key] || '';
         allegroBtn.href = allegroUrl;
@@ -1048,9 +914,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `<img class="modal-thumb${i === 0 ? ' active' : ''}" src="${src}" data-idx="${i}" alt="Zdjęcie ${i + 1}" loading="lazy">`
           ).join('');
         }
-        // Reset personalisation
-        const personalisationInput = document.getElementById('modal-personalisation');
-        if (personalisationInput) personalisationInput.value = '';
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
@@ -1084,200 +947,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (modalClose) modalClose.addEventListener('click', closeModal);
   if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeCartDrawer(); closeCheckout(); } });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeOrderModal(); } });
 
-  // Add to cart from modal
-  const modalAddBtn = document.querySelector('.modal-add-btn');
-  if (modalAddBtn) {
-    modalAddBtn.addEventListener('click', () => {
-      const key = modalAddBtn.dataset.product;
-      addToCart(key);
-      closeModal();
-    });
-  }
 
   // ============================================
-  // CHECKOUT
+  // ORDER MODAL
   // ============================================
-  const checkoutOverlay = document.getElementById('checkout-overlay');
-  const checkoutForm = document.getElementById('checkout-form');
+  const orderOverlay = document.getElementById('order-overlay');
+  const orderForm = document.getElementById('order-form');
+  const orderSuccess = document.getElementById('order-success');
+  const orderProductName = document.getElementById('order-product-name');
+  const orderHiddenProduct = document.getElementById('order-hidden-product');
 
-  const openCheckout = () => {
-    if (cart.length === 0) return;
-    closeCartDrawer();
-    checkoutOverlay.classList.add('active');
+  const openOrderModal = (productKey) => {
+    const p = products[productKey];
+    if (!p) return;
+    const label = p.name + (p.subtitle ? ' — ' + p.subtitle : '');
+    orderProductName.textContent = label;
+    orderHiddenProduct.value = label;
+    orderForm.style.display = '';
+    orderSuccess.style.display = 'none';
+    orderForm.reset();
+    orderHiddenProduct.value = label;
+    orderOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    showCheckoutPane('pane-details');
   };
 
-  const closeCheckout = () => {
-    checkoutOverlay && checkoutOverlay.classList.remove('active');
+  const closeOrderModal = () => {
+    orderOverlay.classList.remove('active');
     document.body.style.overflow = '';
   };
 
-  document.getElementById('cart-checkout-btn').addEventListener('click', openCheckout);
-  document.getElementById('checkout-close-btn').addEventListener('click', closeCheckout);
-  checkoutOverlay.addEventListener('click', e => { if (e.target === checkoutOverlay) closeCheckout(); });
+  document.getElementById('order-modal-close').addEventListener('click', closeOrderModal);
+  orderOverlay.addEventListener('click', (e) => { if (e.target === orderOverlay) closeOrderModal(); });
 
-  const showCheckoutPane = (paneId) => {
-    document.querySelectorAll('.checkout-pane').forEach(p => p.classList.remove('active'));
-    document.getElementById(paneId).classList.add('active');
-
-    const isPayment = paneId === 'pane-payment';
-    const isSuccess = paneId === 'pane-success';
-    const backBtn = document.getElementById('checkout-back-btn');
-    backBtn.style.display = isPayment ? 'flex' : 'none';
-
-    const titles = { 'pane-details': 'Dane dostawy', 'pane-payment': 'Płatność', 'pane-success': 'Potwierdzenie' };
-    document.getElementById('checkout-title').textContent = titles[paneId] || '';
-
-    document.getElementById('dot-2').classList.toggle('active', isPayment || isSuccess);
-    document.getElementById('step-line-fill').style.width = (isPayment || isSuccess) ? '100%' : '0%';
-  };
-
-  document.getElementById('checkout-back-btn').addEventListener('click', () => showCheckoutPane('pane-details'));
-
-  // Payment method switching
-  document.querySelectorAll('.payment-method-card').forEach(card => {
-    card.addEventListener('click', () => {
-      selectedPaymentMethod = card.dataset.method;
-      document.querySelectorAll('.payment-method-card').forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      document.querySelectorAll('.payment-panel').forEach(p => p.classList.remove('active'));
-      document.getElementById(`panel-${selectedPaymentMethod}`).classList.add('active');
-
-      if (selectedPaymentMethod === 'transfer') {
-        renderOrderReview(true);
-        const total = cartTotal() + SHIPPING_COST;
-        document.getElementById('transfer-total').textContent = `${total} zł`;
-        document.getElementById('transfer-reference').textContent = currentReference;
-      } else {
-        renderOrderReview(false);
-      }
+  // Order buttons on product cards
+  document.querySelectorAll('.product-card .order-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const key = btn.closest('.product-card').dataset.product;
+      openOrderModal(key);
     });
   });
 
-  checkoutForm.addEventListener('submit', e => {
+  // Order button in quick-view modal
+  const modalOrderBtn = document.querySelector('.modal-order-btn');
+  if (modalOrderBtn) {
+    modalOrderBtn.addEventListener('click', () => {
+      const activeKey = modalOrderBtn.dataset.product;
+      if (activeKey) openOrderModal(activeKey);
+    });
+  }
+
+  // Formspree AJAX submission for order form
+  orderForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(checkoutForm);
-    customerData = Object.fromEntries(data.entries());
-    if (!customerData.fullName || !customerData.email || !customerData.address || !customerData.city || !customerData.postal) return;
-    currentReference = generateReference();
-    selectedPaymentMethod = 'allegro';
-    document.querySelectorAll('.payment-method-card').forEach(c => c.classList.remove('active'));
-    document.querySelector('.payment-method-card[data-method="allegro"]').classList.add('active');
-    document.querySelectorAll('.payment-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-allegro').classList.add('active');
-    showCheckoutPane('pane-payment');
-    renderOrderReview(false);
-  });
-
-  const SHIPPING_COST = 12;
-
-  const generateReference = () => {
-    const year = new Date().getFullYear();
-    const rand = Math.floor(1000 + Math.random() * 9000);
-    return `AA-${year}-${rand}`;
-  };
-
-  let currentReference = '';
-  let selectedPaymentMethod = 'allegro';
-
-  const renderOrderReview = (includeShipping = false) => {
-    const productTotal = cartTotal();
-    const total = includeShipping ? productTotal + SHIPPING_COST : productTotal;
-    document.getElementById('checkout-order-review').innerHTML = `
-      <div class="order-review-items">
-        ${cart.map(item => `
-          <div class="order-review-item">
-            <img src="${item.image}" alt="${item.name}">
-            <div>
-              <span>${item.name}</span>
-              <small>25 cm (reg.) · ${item.qty} szt.${item.personalisation ? ` · Dedykacja: „${item.personalisation}"` : ''}</small>
-            </div>
-            <span>${item.price * item.qty} zł</span>
-          </div>
-        `).join('')}
-        ${includeShipping ? `
-          <div class="order-review-item">
-            <div style="width:40px;height:40px;flex-shrink:0;"></div>
-            <div><span>Wysyłka</span><small>Kurier / Paczkomat</small></div>
-            <span>${SHIPPING_COST} zł</span>
-          </div>
-        ` : ''}
-      </div>
-      <div class="order-review-total">
-        <span>Łącznie</span>
-        <strong>${total} zł</strong>
-      </div>
-    `;
-  };
-
-  // Bank transfer confirmation
-  document.getElementById('confirm-transfer-btn').addEventListener('click', () => {
-    const btn = document.getElementById('confirm-transfer-btn');
+    const btn = orderForm.querySelector('.order-submit-btn');
+    const btnText = btn.querySelector('span');
+    btnText.textContent = 'Wysyłanie...';
     btn.disabled = true;
-    btn.querySelector('span').textContent = 'Wysyłanie…';
-
-    const orderData = {
-      reference: currentReference,
-      timestamp: new Date().toISOString(),
-      name: customerData.fullName,
-      email: customerData.email,
-      phone: customerData.phone || '',
-      address: customerData.address,
-      city: customerData.city,
-      postal: customerData.postal,
-      items: cart.map(i => `${i.name} x${i.qty}`).join(', '),
-      productTotal: cartTotal(),
-      shipping: SHIPPING_COST,
-      total: cartTotal() + SHIPPING_COST,
-    };
-
-    // Submit to Google Sheets — fire and forget
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPGofDdwWj3gqBHP96fHKHG5DMxams_AzY7enNjc3JVkRH9erCfysJP3d8M297p2KiSA/exec';
-    fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(orderData),
-    }).catch(() => {});
-
-    // Email notification via Formspree — fire and forget
-    fetch('https://formspree.io/f/xkoqkaea', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        _subject: `Nowe zamówienie ${currentReference} — AgereArt`,
-        Referencja: currentReference,
-        Klient: orderData.name,
-        Email: orderData.email,
-        Telefon: orderData.phone || '—',
-        Adres: `${orderData.address}, ${orderData.postal} ${orderData.city}`,
-        Produkty: orderData.items,
-        'Suma produktów': `${orderData.productTotal} zł`,
-        Wysyłka: `${orderData.shipping} zł`,
-        'Do zapłaty': `${orderData.total} zł`,
-      }),
-    }).catch(() => {});
-
-    // Show success
-    document.getElementById('checkout-success-msg').textContent =
-      `Dziękujemy, ${customerData.fullName.split(' ')[0]}! Twój numer referencyjny to ${currentReference}. Prosimy o dokonanie przelewu — po zaksięgowaniu wysyłamy w 1–2 dni robocze.`;
-    document.getElementById('success-transfer-details').style.display = 'block';
-    document.getElementById('success-reference').textContent = currentReference;
-    document.getElementById('success-amount').textContent = `${cartTotal() + SHIPPING_COST} zł`;
-
-    cart = [];
-    saveCart();
-    updateCartUI();
-    showCheckoutPane('pane-success');
-
-    btn.disabled = false;
-    btn.querySelector('span').textContent = 'Potwierdzam zamówienie';
+    try {
+      const res = await fetch(orderForm.action, {
+        method: 'POST',
+        body: new FormData(orderForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        orderForm.style.display = 'none';
+        orderSuccess.style.display = 'flex';
+      } else {
+        btnText.textContent = 'Błąd — spróbuj ponownie';
+        btn.disabled = false;
+      }
+    } catch {
+      btnText.textContent = 'Błąd — spróbuj ponownie';
+      btn.disabled = false;
+    }
   });
 
-  document.getElementById('checkout-done-btn').addEventListener('click', closeCheckout);
+  document.getElementById('order-done-btn').addEventListener('click', closeOrderModal);
 
   // ============================================
   // CONTACT FORM — native Formspree submission
