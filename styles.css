@@ -3571,3 +3571,225 @@ body::before {
   .order-form-row { grid-template-columns: 1fr; }
   .order-modal-inner { padding: 24px 18px 20px; }
 }
+
+/* ============================================
+   Privacy Policy Modal
+   ============================================ */
+
+.privacy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  padding: 20px;
+}
+
+.privacy-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.privacy-modal {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-strong);
+  max-width: 780px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(24px) scale(0.98);
+  transition: transform 0.4s var(--ease-out-expo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) transparent;
+}
+
+.privacy-overlay.active .privacy-modal {
+  transform: translateY(0) scale(1);
+}
+
+.privacy-modal::-webkit-scrollbar {
+  width: 4px;
+}
+.privacy-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.privacy-modal::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
+.privacy-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  z-index: 1;
+}
+
+.privacy-modal-close:hover {
+  color: var(--color-text);
+  border-color: var(--color-gold);
+  background: rgba(184, 135, 61, 0.06);
+}
+
+.privacy-modal-inner {
+  padding: 0;
+}
+
+.privacy-modal-header {
+  padding: 48px 48px 32px;
+  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(135deg, var(--color-bg-warm) 0%, var(--color-bg-card) 100%);
+}
+
+.privacy-modal-header .section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+}
+
+.privacy-modal-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.privacy-date {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+}
+
+.privacy-modal-body {
+  padding: 40px 48px 48px;
+}
+
+.privacy-section {
+  margin-bottom: 36px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.privacy-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.privacy-section h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 14px;
+}
+
+.privacy-section p {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.privacy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.privacy-section ul li {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  padding: 6px 0 6px 20px;
+  position: relative;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.privacy-section ul li:last-child {
+  border-bottom: none;
+}
+
+.privacy-section ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  font-size: 9px;
+  color: var(--color-gold);
+  line-height: 1.7;
+}
+
+.privacy-section a {
+  color: var(--color-gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.privacy-section a:hover {
+  border-bottom-color: var(--color-gold);
+}
+
+@media (max-width: 640px) {
+  .privacy-modal-header {
+    padding: 40px 24px 24px;
+  }
+  .privacy-modal-body {
+    padding: 28px 24px 32px;
+  }
+}
+
+/* ============================================
+   FAQ Items (within Privacy Modal structure)
+   ============================================ */
+
+.faq-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.faq-q {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  color: var(--color-text) !important;
+  margin-bottom: 6px !important;
+  font-size: 0.95rem !important;
+}
+
+.faq-item p:not(.faq-q) {
+  margin-bottom: 0;
+}

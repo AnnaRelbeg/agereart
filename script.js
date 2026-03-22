@@ -1443,6 +1443,84 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.product-card').forEach(card => cardObserver.observe(card));
   }
 
+  // --- FAQ Modal ---
+  const faqOverlay = document.getElementById('faq-overlay');
+  const faqLink = document.getElementById('faq-link');
+  const faqClose = document.getElementById('faq-modal-close');
+
+  const openFaq = (e) => {
+    e.preventDefault();
+    faqOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeFaq = () => {
+    faqOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (faqLink) faqLink.addEventListener('click', openFaq);
+  if (faqClose) faqClose.addEventListener('click', closeFaq);
+  if (faqOverlay) {
+    faqOverlay.addEventListener('click', (e) => {
+      if (e.target === faqOverlay) closeFaq();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && faqOverlay.classList.contains('active')) closeFaq();
+  });
+
+  // --- Regulamin Modal ---
+  const regulaminOverlay = document.getElementById('regulamin-overlay');
+  const regulaminLink = document.getElementById('regulamin-link');
+  const regulaminClose = document.getElementById('regulamin-modal-close');
+
+  const openRegulamin = (e) => {
+    e.preventDefault();
+    regulaminOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeRegulamin = () => {
+    regulaminOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (regulaminLink) regulaminLink.addEventListener('click', openRegulamin);
+  if (regulaminClose) regulaminClose.addEventListener('click', closeRegulamin);
+  if (regulaminOverlay) {
+    regulaminOverlay.addEventListener('click', (e) => {
+      if (e.target === regulaminOverlay) closeRegulamin();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && regulaminOverlay.classList.contains('active')) closeRegulamin();
+  });
+
+  // --- Privacy Policy Modal ---
+  const privacyOverlay = document.getElementById('privacy-overlay');
+  const privacyLink = document.getElementById('privacy-link');
+  const privacyClose = document.getElementById('privacy-modal-close');
+
+  const openPrivacy = (e) => {
+    e.preventDefault();
+    privacyOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  const closePrivacy = () => {
+    privacyOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (privacyLink) privacyLink.addEventListener('click', openPrivacy);
+  if (privacyClose) privacyClose.addEventListener('click', closePrivacy);
+  if (privacyOverlay) {
+    privacyOverlay.addEventListener('click', (e) => {
+      if (e.target === privacyOverlay) closePrivacy();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && privacyOverlay.classList.contains('active')) closePrivacy();
+  });
+
   // --- Section Fade-Slide on Mobile ---
   if (window.innerWidth <= 768) {
     const sectionObserver = new IntersectionObserver((entries) => {
